@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwx24uh2kgwg8"
+path="res://.godot/imported/Vampire_v2_wav.wav-ed7f20b7c6b5c9f1598110257b05d1a5.sample"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/cards/vampire bite/Vampire_v2_wav.wav"
+dest_files=["res://.godot/imported/Vampire_v2_wav.wav-ed7f20b7c6b5c9f1598110257b05d1a5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

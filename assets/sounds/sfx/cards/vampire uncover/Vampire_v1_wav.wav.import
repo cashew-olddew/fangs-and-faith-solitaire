@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lysvmnenfjnk"
+path="res://.godot/imported/Vampire_v1_wav.wav-05e916961637740243fa954e25cc3867.sample"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/cards/vampire uncover/Vampire_v1_wav.wav"
+dest_files=["res://.godot/imported/Vampire_v1_wav.wav-05e916961637740243fa954e25cc3867.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

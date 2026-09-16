@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckf3n2u3h6i6t"]
+
+[ext_resource type="PackedScene" uid="uid://m45wdp3xi53r" path="res://scenes/ui/labeled_drop_down.tscn" id="1_j4ihi"]
+[ext_resource type="Theme" uid="uid://yk5ww36oyeyk" path="res://resources/theme/vampire_theme.tres" id="2_acxsp"]
+
+[node name="LanguageDropDown" instance=ExtResource("1_j4ihi")]
+theme = ExtResource("2_acxsp")
+
+[node name="OptionButton" parent="." index="1"]
+size_flags_horizontal = 3

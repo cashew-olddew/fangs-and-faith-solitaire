@@ -1,0 +1,35 @@
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_1"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_2"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_3"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_4"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_5"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_6"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_7"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_8"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_9"
+msgstr ""

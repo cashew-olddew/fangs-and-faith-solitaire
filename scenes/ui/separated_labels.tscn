@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bph1k0xj2ptmt"]
+
+[ext_resource type="Script" uid="uid://c0h8pncm1yqmj" path="res://scripts/ui/separated_labels.gd" id="1_n2v70"]
+
+[node name="HBoxSeparatedLabels" type="HBoxContainer"]
+theme_override_constants/separation = 150
+script = ExtResource("1_n2v70")
+
+[node name="LabelLeft" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+
+[node name="LabelRight" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1

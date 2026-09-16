@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0q7voxjb3m2s"]
+
+[ext_resource type="Theme" uid="uid://yk5ww36oyeyk" path="res://resources/theme/vampire_theme.tres" id="1_mlf3d"]
+[ext_resource type="Script" uid="uid://ttha50rykjtu" path="res://scripts/ui/volume.gd" id="1_scx5l"]
+[ext_resource type="PackedScene" uid="uid://csnyowa0dqi80" path="res://scenes/ui/music_dropdown.tscn" id="2_ibk8p"]
+
+[node name="VBoxAudio" type="VBoxContainer"]
+theme = ExtResource("1_mlf3d")
+theme_override_constants/separation = 36
+script = ExtResource("1_scx5l")
+
+[node name="HBoxSFXVolume" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelSFX" type="Label" parent="HBoxSFXVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX_VOLUME"
+
+[node name="HSliderSFX" type="HSlider" parent="HBoxSFXVolume"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+
+[node name="HBoxMusicVolume" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelMusic" type="Label" parent="HBoxMusicVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MUSIC_VOLUME"
+
+[node name="HSliderMusic" type="HSlider" parent="HBoxMusicVolume"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+
+[node name="MusicDropdown" parent="." instance=ExtResource("2_ibk8p")]
+layout_mode = 2
+music_folder_location = "res://assets/sounds/music"
+label_text = "TRACK"
+options = {
+"A Night's Respite (LOOP).wav": "A Night's Respite",
+"Behind Foreign Walls (LOOP).wav": "Behind Foreign Walls",
+"Hemlock Cliffs (LOOP).wav": "Hemlock Cliffs",
+"Hook & Crook Inn (LOOP).wav": "Hook & Crook Inn",
+"Round Robin Inn (LOOP).wav": "Round Robin Inn",
+"Scent of Scarlet (LOOP).wav": "Scent of Scarlet",
+"Streets of Scholars (LOOP).wav": "Streets of Scholars",
+"The Salt Crags (LOOP).wav": "The Salt Crags",
+"Under the Iron Gates (LOOP).wav": "Under the Iron Gates"
+}
+default_option = "Hook & Crook Inn (LOOP).wav"
+save_file_settings = {
+"group": "SOUND",
+"property": "TRACK"
+}
+
+[connection signal="drag_ended" from="HBoxSFXVolume/HSliderSFX" to="." method="_on_h_slider_sfx_drag_ended"]
+[connection signal="value_changed" from="HBoxSFXVolume/HSliderSFX" to="." method="_on_h_slider_sfx_value_changed"]
+[connection signal="value_changed" from="HBoxMusicVolume/HSliderMusic" to="." method="_on_h_slider_music_value_changed"]

@@ -1,0 +1,377 @@
+[gd_scene format=3 uid="uid://bnqfpx6ggliy3"]
+
+[ext_resource type="Theme" uid="uid://yk5ww36oyeyk" path="res://resources/theme/vampire_theme.tres" id="1_cpjf8"]
+[ext_resource type="Script" uid="uid://dhwwsm6v8u8tq" path="res://scripts/ui/main_menu.gd" id="1_vij0w"]
+[ext_resource type="Texture2D" uid="uid://c131cpms7c32i" path="res://assets/backgrounds/background.png" id="2_15ab5"]
+[ext_resource type="PackedScene" uid="uid://wauql8qtfcvd" path="res://scenes/ui/settings.tscn" id="3_skn7t"]
+[ext_resource type="PackedScene" uid="uid://bph1k0xj2ptmt" path="res://scenes/ui/separated_labels.tscn" id="3_um4ac"]
+[ext_resource type="PackedScene" uid="uid://2tj507qk1iie" path="res://scenes/ui/ui_sfx.tscn" id="3_x7qtj"]
+[ext_resource type="PackedScene" uid="uid://bk07rfxg38ccr" path="res://scenes/ui/mode_drop_down.tscn" id="5_btxxm"]
+[ext_resource type="PackedScene" uid="uid://dd7h6gmwcc6hp" path="res://scenes/ui/rows_drop_down.tscn" id="6_wb0q5"]
+[ext_resource type="PackedScene" uid="uid://bsgya5bqe0ul1" path="res://scenes/ui/difficulty_drop_down.tscn" id="7_q85j6"]
+
+[node name="MenuPage" type="Control" unique_id=882597953]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cpjf8")
+script = ExtResource("1_vij0w")
+
+[node name="UISfx" parent="." unique_id=201662835 instance=ExtResource("3_x7qtj")]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1359450670]
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_15ab5")
+
+[node name="VBoxMainMenu" type="VBoxContainer" parent="." unique_id=1329243999]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.336
+anchor_right = 0.5
+anchor_bottom = 0.336
+offset_left = -320.0
+offset_top = 0.119965
+offset_right = 321.0
+offset_bottom = 757.12
+grow_horizontal = 2
+
+[node name="VBoxTitle" type="VBoxContainer" parent="VBoxMainMenu" unique_id=643206558]
+layout_mode = 2
+
+[node name="LabelTitleTop" type="Label" parent="VBoxMainMenu/VBoxTitle" unique_id=682200136]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "Fangs & Faith"
+horizontal_alignment = 1
+
+[node name="SeparatorTitle" type="HSeparator" parent="VBoxMainMenu/VBoxTitle" unique_id=1658109191]
+layout_mode = 2
+
+[node name="LabelTitleBottom" type="Label" parent="VBoxMainMenu/VBoxTitle" unique_id=320018591]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+theme_override_font_sizes/font_size = 124
+text = "Solitaire"
+horizontal_alignment = 1
+
+[node name="SeparatorTitleButtons" type="HSeparator" parent="VBoxMainMenu" unique_id=1860669085]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="VBoxMainButtons" type="VBoxContainer" parent="VBoxMainMenu" unique_id=262881458]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ButtonNewGame" type="Button" parent="VBoxMainMenu/VBoxMainButtons" unique_id=1928403016]
+layout_mode = 2
+text = "NEW_GAME"
+
+[node name="ButtonSettings" type="Button" parent="VBoxMainMenu/VBoxMainButtons" unique_id=217482483]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="ButtonCredits" type="Button" parent="VBoxMainMenu/VBoxMainButtons" unique_id=357165951]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="SeparatorButtonsExit" type="HSeparator" parent="VBoxMainMenu/VBoxMainButtons" unique_id=436955972]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="ButtonExit" type="Button" parent="VBoxMainMenu/VBoxMainButtons" unique_id=1916950421]
+layout_mode = 2
+theme_type_variation = &"ButtonRedExit"
+text = "EXIT"
+
+[node name="VBoxDifficulty" type="VBoxContainer" parent="." unique_id=120130176]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.336
+anchor_right = 0.5
+anchor_bottom = 0.336
+offset_left = -320.0
+offset_top = 0.119965
+offset_right = 321.0
+offset_bottom = 757.12
+grow_horizontal = 2
+
+[node name="VBoxTitle" type="VBoxContainer" parent="VBoxDifficulty" unique_id=676544487]
+layout_mode = 2
+
+[node name="LabelTitleTop" type="Label" parent="VBoxDifficulty/VBoxTitle" unique_id=59827806]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "Fangs & Faith"
+horizontal_alignment = 1
+
+[node name="SeparatorTitle" type="HSeparator" parent="VBoxDifficulty/VBoxTitle" unique_id=1727730988]
+layout_mode = 2
+
+[node name="LabelTitleBottom" type="Label" parent="VBoxDifficulty/VBoxTitle" unique_id=1565444073]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+theme_override_font_sizes/font_size = 124
+text = "Solitaire"
+horizontal_alignment = 1
+
+[node name="SeparatorTitleButtons" type="HSeparator" parent="VBoxDifficulty" unique_id=653566326]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="VBoxDifficultyButtons" type="VBoxContainer" parent="VBoxDifficulty" unique_id=1613138633]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ModeDropDown" parent="VBoxDifficulty/VBoxDifficultyButtons" unique_id=223725303 instance=ExtResource("5_btxxm")]
+layout_mode = 2
+label_text = "MODE"
+options = {
+"0": "Fangs & Faith",
+"1": "CASUAL"
+}
+default_option = "0"
+save_file_settings = {
+"group": "GAME",
+"property": "MODE"
+}
+
+[node name="RowsDropDown" parent="VBoxDifficulty/VBoxDifficultyButtons" unique_id=193844890 instance=ExtResource("6_wb0q5")]
+layout_mode = 2
+label_text = "ROWS"
+options = {
+"4": "FOUR",
+"5": "FIVE",
+"6": "SIX"
+}
+default_option = "6"
+save_file_settings = {
+"group": "GAME",
+"property": "ROWS"
+}
+
+[node name="DifficultyDropDown" parent="VBoxDifficulty/VBoxDifficultyButtons" unique_id=433812149 instance=ExtResource("7_q85j6")]
+layout_mode = 2
+label_text = "DIFFICULTY"
+options = {
+"0": "WISHFUL",
+"1": "WARY",
+"2": "HOPELESS"
+}
+default_option = "2"
+save_file_settings = {
+"group": "GAME",
+"property": "DIFFICULTY"
+}
+
+[node name="ButtonStartGame" type="Button" parent="VBoxDifficulty/VBoxDifficultyButtons" unique_id=661273047]
+layout_mode = 2
+text = "START"
+
+[node name="ButtonBack" type="Button" parent="VBoxDifficulty/VBoxDifficultyButtons" unique_id=1231138823]
+layout_mode = 2
+theme_type_variation = &"ButtonRedExit"
+text = "BACK_TO_MENU"
+
+[node name="VBoxSettings" type="VBoxContainer" parent="." unique_id=1138882354]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.336
+anchor_right = 0.5
+anchor_bottom = 0.336
+offset_left = -320.0
+offset_top = 0.119965
+offset_right = 321.0
+offset_bottom = 705.12
+grow_horizontal = 2
+
+[node name="VBoxTitle" type="VBoxContainer" parent="VBoxSettings" unique_id=1707296008]
+layout_mode = 2
+
+[node name="LabelTitleTop" type="Label" parent="VBoxSettings/VBoxTitle" unique_id=1278981568]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "Fangs & Faith"
+horizontal_alignment = 1
+
+[node name="SeparatorTitle" type="HSeparator" parent="VBoxSettings/VBoxTitle" unique_id=181723311]
+layout_mode = 2
+
+[node name="LabelTitleBottom" type="Label" parent="VBoxSettings/VBoxTitle" unique_id=1609696380]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+theme_override_font_sizes/font_size = 124
+text = "Solitaire"
+horizontal_alignment = 1
+
+[node name="SeparatorTitleButtons" type="HSeparator" parent="VBoxSettings" unique_id=1484583258]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="VBoxSettings" parent="VBoxSettings" unique_id=1048449 instance=ExtResource("3_skn7t")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PanelCredits" type="PanelContainer" parent="." unique_id=731316946]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -397.5
+offset_right = 390.0
+offset_bottom = 397.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginCredits" type="MarginContainer" parent="PanelCredits" unique_id=1905114096]
+clip_children = 2
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 50
+
+[node name="VBoxCreditsContent" type="VBoxContainer" parent="PanelCredits/MarginCredits" unique_id=1856486184]
+layout_mode = 2
+
+[node name="LabelCredits" type="Label" parent="PanelCredits/MarginCredits/VBoxCreditsContent" unique_id=1880121125]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "CREDITS"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelCredits/MarginCredits/VBoxCreditsContent" unique_id=1559517065]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer" unique_id=519661021]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer" unique_id=208386621]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="VBoxScrollContent" type="VBoxContainer" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer" unique_id=1801390144]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SeparatorTopContainer" type="HSeparator" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent" unique_id=845261858]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxCashewOldDew" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent" unique_id=283856091 instance=ExtResource("3_um4ac")]
+layout_mode = 2
+left = "Cashew OldDew"
+right = "ART_AND_PROGRAMMING"
+
+[node name="HBoxDanysdani" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent" unique_id=1883976238 instance=ExtResource("3_um4ac")]
+layout_mode = 2
+left = "Danysdani"
+right = "PROGRAMMING"
+
+[node name="HBoxForestRainbows" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent" unique_id=843757159 instance=ExtResource("3_um4ac")]
+layout_mode = 2
+left = "ForestRainbows"
+right = "PROGRAMMING"
+
+[node name="VBoxAssetsCredits" type="VBoxContainer" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent" unique_id=189830035]
+layout_mode = 2
+
+[node name="LabelMargin" type="MarginContainer" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxAssetsCredits" unique_id=399137061]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="LabelAssets" type="Label" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxAssetsCredits/LabelMargin" unique_id=1507922539]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "OTHER_ASSETS"
+horizontal_alignment = 1
+
+[node name="HBoxNicole" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxAssetsCredits" unique_id=1730422203 instance=ExtResource("3_um4ac")]
+layout_mode = 2
+left = "Nicole Lyria"
+right = "BACKGROUND_MUSIC"
+
+[node name="HBoxAlan" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxAssetsCredits" unique_id=231986634 instance=ExtResource("3_um4ac")]
+layout_mode = 2
+left = "Alan Dalcastagne"
+right = "SOUND_EFFECTS"
+
+[node name="HBoxWenrexa" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxAssetsCredits" unique_id=1685567076 instance=ExtResource("3_um4ac")]
+layout_mode = 2
+left = "Wenrexa"
+right = "UI"
+
+[node name="VBoxCreditsTranslation" type="VBoxContainer" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent" unique_id=1929126945]
+layout_mode = 2
+
+[node name="LabelMargin" type="MarginContainer" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxCreditsTranslation" unique_id=572326030]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="LabelTranslation" type="Label" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxCreditsTranslation/LabelMargin" unique_id=186549887]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "LOCALIZATION"
+horizontal_alignment = 1
+
+[node name="SeparatorAssetsCredits" type="HSeparator" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxCreditsTranslation" unique_id=1036395183]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="HBoxNaxum" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxCreditsTranslation" unique_id=166780219 instance=ExtResource("3_um4ac")]
+layout_mode = 2
+left = "Naxum"
+right = "Spanish"
+
+[node name="HBoxArmia" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxCreditsTranslation" unique_id=2094368741 instance=ExtResource("3_um4ac")]
+layout_mode = 2
+left = "ArmiaStars"
+right = "Dutch"
+
+[node name="HBoxThericardomm" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxCreditsTranslation" unique_id=1990307186 instance=ExtResource("3_um4ac")]
+layout_mode = 2
+left = "thericardomm"
+right = "Turkish"
+
+[node name="HBoxLuck" parent="PanelCredits/MarginCredits/VBoxCreditsContent/MarginContainer/ScrollContainer/MarginContainer/VBoxScrollContent/VBoxCreditsTranslation" unique_id=1272067593 instance=ExtResource("3_um4ac")]
+layout_mode = 2
+left = "LuckIsPower"
+right = "Italian"
+
+[node name="ButtonBackToMenu" type="Button" parent="PanelCredits/MarginCredits/VBoxCreditsContent" unique_id=1794007711]
+layout_mode = 2
+theme_type_variation = &"ButtonRedExit"
+text = "BACK_TO_MENU"
+
+[connection signal="pressed" from="VBoxMainMenu/VBoxMainButtons/ButtonNewGame" to="." method="_on_button_new_game_pressed"]
+[connection signal="pressed" from="VBoxMainMenu/VBoxMainButtons/ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="VBoxMainMenu/VBoxMainButtons/ButtonCredits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="VBoxMainMenu/VBoxMainButtons/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="VBoxDifficulty/VBoxDifficultyButtons/ButtonStartGame" to="." method="_on_button_difficulty_start_game_pressed"]
+[connection signal="pressed" from="VBoxDifficulty/VBoxDifficultyButtons/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="button_back_pressed" from="VBoxSettings/VBoxSettings" to="." method="_on_v_box_settings_button_back_pressed"]
+[connection signal="hidden" from="VBoxSettings/VBoxSettings" to="." method="_on_v_box_settings_hidden"]
+[connection signal="pressed" from="PanelCredits/MarginCredits/VBoxCreditsContent/ButtonBackToMenu" to="." method="_on_button_back_pressed"]

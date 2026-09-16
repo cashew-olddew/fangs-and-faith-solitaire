@@ -1,0 +1,253 @@
+# LANGUAGE translation for Fangs and Faith Solitaire for the following files:
+# res://scenes/ui/cursor.tscn
+# res://scenes/ui/display.tscn
+# res://scenes/ui/language_drop_down.tscn
+# res://scenes/ui/settings.tscn
+# res://scenes/ui/volume.tscn
+# res://scenes/ui/main_menu.tscn
+# res://scenes/ui/game_over.tscn
+# res://scenes/ui/game_ui.tscn
+# res://scenes/ui/rows_drop_down.tscn
+# res://scenes/ui/tutorial_box.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fangs and Faith Solitaire\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: scenes/ui/cursor.tscn
+msgid "SYSTEM_CURSOR"
+msgstr ""
+
+#: scenes/ui/display.tscn
+msgid "FULL_SCREEN"
+msgstr ""
+
+#: scenes/ui/display.tscn
+msgid "SCREEN_RESOLUTION"
+msgstr ""
+
+#: scenes/ui/settings.tscn
+msgid "VIDEO"
+msgstr ""
+
+#: scenes/ui/settings.tscn
+msgid "AUDIO"
+msgstr ""
+
+#: scenes/ui/settings.tscn
+msgid "USER_INTERFACE"
+msgstr ""
+
+#: scenes/ui/settings.tscn
+msgid "LANGUAGE"
+msgstr ""
+
+#: scenes/ui/settings.tscn
+msgid "BACK_TO_CATEGORIES"
+msgstr ""
+
+#: scenes/ui/settings.tscn
+#: scenes/ui/main_menu.tscn
+#: scenes/ui/game_over.tscn
+msgid "BACK_TO_MENU"
+msgstr ""
+
+#: scenes/ui/volume.tscn
+msgid "SFX_VOLUME"
+msgstr ""
+
+#: scenes/ui/volume.tscn
+msgid "MUSIC_VOLUME"
+msgstr ""
+
+#: scenes/ui/volume.tscn
+msgid "TRACK"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "Fangs & Faith"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "Solitaire"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "NEW_GAME"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+#: scenes/ui/game_ui.tscn
+msgid "SETTINGS"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "CREDITS"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+#: scenes/ui/game_ui.tscn
+msgid "EXIT"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "MODE"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "ROWS"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "DIFFICULTY"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "START"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "OTHER_ASSETS"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "LOCALIZATION"
+msgstr ""
+
+#: scenes/ui/game_over.tscn
+msgid "YOU_WON"
+msgstr ""
+
+#: scenes/ui/game_over.tscn
+msgid "GAME_OVER"
+msgstr ""
+
+#: scenes/ui/game_over.tscn
+msgid "PLAY_AGAIN"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "PAUSE_TITLE"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "RESUME"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "GAME_RULES"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "EXIT_TO_MENU"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "SETTINGS_TITLE"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_1"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_2"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_3"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_4"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_5"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_6"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_7"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_8"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_9"
+msgstr ""
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_10"
+msgstr ""
+
+#: scenes/ui/tutorial_box.tscn
+msgid "1/2"
+msgstr ""
+
+#: scenes/ui/tutorial_box.tscn
+msgid "BACK"
+msgstr ""
+
+#: scenes/ui/tutorial_box.tscn
+msgid "NEXT"
+msgstr ""
+
+#: scenes/ui/tutorial_box.tscn
+msgid "FINISH"
+msgstr ""
+
+#: scenes/ui/mode_drop_down.tscn
+msgid "CASUAL"
+msgstr ""
+
+#: scenes/ui/rows_drop_down.tscn
+msgid "FOUR"
+msgstr ""
+
+#: scenes/ui/rows_drop_down.tscn
+msgid "FIVE"
+msgstr ""
+
+#: scenes/ui/rows_drop_down.tscn
+msgid "SIX"
+msgstr ""
+
+#: scenes/ui/difficulty_drop_down.tscn
+msgid "WISHFUL"
+msgstr ""
+
+#: scenes/ui/difficulty_drop_down.tscn
+msgid "WARY"
+msgstr ""
+
+#: scenes/ui/difficulty_drop_down.tscn
+msgid "HOPELESS"
+msgstr ""
+
+#: scenes/ui/separated_labels.tscn
+msgid "ART_AND_PROGRAMMING"
+msgstr ""
+
+#: scenes/ui/separated_labels.tscn
+msgid "PROGRAMMING"
+msgstr ""
+
+#: scenes/ui/separated_labels.tscn
+msgid "BACKGROUND_MUSIC"
+msgstr ""
+
+#: scenes/ui/separated_labels.tscn
+msgid "SOUND_EFFECTS"
+msgstr ""

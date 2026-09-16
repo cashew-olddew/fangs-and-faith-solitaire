@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://uu8roefxj0ud"]
+
+[ext_resource type="Texture2D" uid="uid://dk7mkb3liwgfw" path="res://assets/ui/sliders/Panel.png" id="1_4oafs"]
+
+[resource]
+texture = ExtResource("1_4oafs")
+axis_stretch_horizontal = 1
+modulate_color = Color(0.74902, 0.0745098, 0.0745098, 1)

@@ -1,0 +1,117 @@
+[gd_scene load_steps=21 format=3 uid="uid://dpxod18olmce5"]
+
+[ext_resource type="Script" uid="uid://i1218jb1780i" path="res://scripts/game/board_manager.gd" id="1_3hqbm"]
+[ext_resource type="Script" uid="uid://bvsiupq3vaxoi" path="res://scripts/game/zone_manager.gd" id="2_fwv6l"]
+[ext_resource type="PackedScene" uid="uid://c33x14dxxrkp8" path="res://scenes/game/collector_zone.tscn" id="4_70hj7"]
+[ext_resource type="Texture2D" uid="uid://bt40hfab66q57" path="res://assets/zones/dark_collector_small.png" id="5_rearu"]
+[ext_resource type="Texture2D" uid="uid://d1ud06ck8ixbc" path="res://assets/zones/red_collector_small.png" id="6_0c56q"]
+[ext_resource type="PackedScene" uid="uid://dxyo05k8puq8h" path="res://scenes/game/special_zone.tscn" id="7_446vr"]
+[ext_resource type="Texture2D" uid="uid://d5ayehmfm0fk" path="res://assets/zones/transparent_white_square_small.png" id="8_oa4me"]
+[ext_resource type="PackedScene" uid="uid://dl2tjswse6lxn" path="res://scenes/game/normal_zone.tscn" id="9_maojt"]
+[ext_resource type="Script" uid="uid://by373l6xpbldx" path="res://scripts/game/metal_zone.gd" id="10_yh1dh"]
+[ext_resource type="Script" uid="uid://b73g8p7qv6hcq" path="res://scripts/game/deck_manager.gd" id="11_l16t1"]
+[ext_resource type="Script" uid="uid://b0ydv73px3clb" path="res://scripts/animation/animation_manager.gd" id="12_rg7oo"]
+[ext_resource type="Script" uid="uid://cd4s6lhmdn7ci" path="res://scenes/managers/transformation_manager.gd" id="13_i1fvx"]
+[ext_resource type="Script" uid="uid://ddv1t7uon2jt" path="res://scripts/animation/spin_animation_manager.gd" id="13_rearu"]
+[ext_resource type="Script" uid="uid://c1hlotxyuxsp7" path="res://scripts/game/state/state_machine.gd" id="14_tufnl"]
+[ext_resource type="Script" uid="uid://c4oieci5l2nco" path="res://scripts/game/game_states/game_start.gd" id="15_fwv6l"]
+[ext_resource type="Script" uid="uid://5rktj2pptt3e" path="res://scripts/game/game_states/state_game_play.gd" id="15_vsg7g"]
+[ext_resource type="Script" uid="uid://cqpqh80v3h4n5" path="res://scripts/game/game_states/state_game_won.gd" id="17_mfywk"]
+[ext_resource type="Script" uid="uid://biqhpikqnfsym" path="res://scripts/game/game_states/state_game_over.gd" id="18_70hj7"]
+[ext_resource type="Script" uid="uid://da3ljtluaa7j2" path="res://scenes/managers/drawer.gd" id="19_rearu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fwv6l"]
+
+[node name="BoardManager" type="Node2D"]
+script = ExtResource("1_3hqbm")
+
+[node name="ZoneManager" type="Node2D" parent="."]
+script = ExtResource("2_fwv6l")
+
+[node name="Normals" type="Node2D" parent="ZoneManager"]
+
+[node name="Collectors" type="Node2D" parent="ZoneManager"]
+
+[node name="CollectorZonePriest" parent="ZoneManager/Collectors" instance=ExtResource("4_70hj7")]
+position = Vector2(1723, 378)
+texture = ExtResource("5_rearu")
+
+[node name="CollectorZoneVampire" parent="ZoneManager/Collectors" instance=ExtResource("4_70hj7")]
+position = Vector2(1724, 702)
+suit = 0
+texture = ExtResource("6_0c56q")
+
+[node name="Specials" type="Node2D" parent="ZoneManager"]
+
+[node name="SpecialZonePriest" parent="ZoneManager/Specials" instance=ExtResource("7_446vr")]
+position = Vector2(1726, 122)
+suit = 1
+texture = ExtResource("8_oa4me")
+
+[node name="SpecialZoneVampire" parent="ZoneManager/Specials" instance=ExtResource("7_446vr")]
+position = Vector2(1726, 956)
+suit = 0
+texture = ExtResource("8_oa4me")
+
+[node name="Metals" type="Node2D" parent="ZoneManager"]
+
+[node name="MetalZoneTop" parent="ZoneManager/Metals" instance=ExtResource("9_maojt")]
+position = Vector2(1322, 215)
+script = ExtResource("10_yh1dh")
+texture = ExtResource("8_oa4me")
+is_stack_allowed = false
+
+[node name="MetalZoneMid" parent="ZoneManager/Metals" instance=ExtResource("9_maojt")]
+position = Vector2(1356, 540)
+script = ExtResource("10_yh1dh")
+texture = ExtResource("8_oa4me")
+is_stack_allowed = false
+
+[node name="MetalZoneBot" parent="ZoneManager/Metals" instance=ExtResource("9_maojt")]
+position = Vector2(1325, 862)
+script = ExtResource("10_yh1dh")
+texture = ExtResource("8_oa4me")
+is_stack_allowed = false
+
+[node name="DeckManager" type="Node2D" parent="."]
+script = ExtResource("11_l16t1")
+
+[node name="AnimationManager" type="Node" parent="."]
+script = ExtResource("12_rg7oo")
+starting_position = Vector2(2100, 520)
+
+[node name="SpinAnimationManager" type="Node" parent="AnimationManager"]
+script = ExtResource("13_rearu")
+rotation_speed = 0.512
+
+[node name="CardRotationPivot" type="Node2D" parent="AnimationManager/SpinAnimationManager"]
+
+[node name="TransformationManager" type="Node" parent="."]
+script = ExtResource("13_i1fvx")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("14_tufnl")
+
+[node name="GameStart" type="Node" parent="StateMachine"]
+script = ExtResource("15_fwv6l")
+
+[node name="GamePlay" type="Node" parent="StateMachine"]
+script = ExtResource("15_vsg7g")
+
+[node name="GameWon" type="Node" parent="StateMachine"]
+script = ExtResource("17_mfywk")
+
+[node name="GameOver" type="Node" parent="StateMachine"]
+script = ExtResource("18_70hj7")
+
+[node name="InputBlocker" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fwv6l")
+
+[node name="Drawer" type="Node2D" parent="."]
+z_index = 4096
+script = ExtResource("19_rearu")
+
+[connection signal="card_collected" from="DeckManager" to="." method="_on_deck_manager_card_collected"]
+[connection signal="special_card_added" from="DeckManager" to="." method="_on_deck_manager_special_card_added"]

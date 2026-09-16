@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://wauql8qtfcvd"]
+
+[ext_resource type="PackedScene" uid="uid://dwo745ajiymax" path="res://scenes/ui/display.tscn" id="1_a06eu"]
+[ext_resource type="Script" uid="uid://wrwbu3cucw7g" path="res://scripts/ui/settings.gd" id="1_lir4u"]
+[ext_resource type="Theme" uid="uid://yk5ww36oyeyk" path="res://resources/theme/vampire_theme.tres" id="1_twqfa"]
+[ext_resource type="PackedScene" uid="uid://c0q7voxjb3m2s" path="res://scenes/ui/volume.tscn" id="2_fq7gl"]
+[ext_resource type="PackedScene" uid="uid://ckf3n2u3h6i6t" path="res://scenes/ui/language_drop_down.tscn" id="3_p53a2"]
+[ext_resource type="PackedScene" uid="uid://dfh5d1x5167vl" path="res://scenes/ui/cursor.tscn" id="4_n0fm8"]
+[ext_resource type="Script" uid="uid://b7uyys8vmqpsb" path="res://scripts/ui/languages_drop_down.gd" id="6_nyty4"]
+
+[node name="VBoxSettings" type="VBoxContainer"]
+process_mode = 3
+theme = ExtResource("1_twqfa")
+script = ExtResource("1_lir4u")
+
+[node name="VBoxCategories" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Video" type="Button" parent="VBoxCategories"]
+layout_mode = 2
+text = "VIDEO"
+
+[node name="Audio" type="Button" parent="VBoxCategories"]
+layout_mode = 2
+text = "AUDIO"
+
+[node name="UserInterface" type="Button" parent="VBoxCategories"]
+layout_mode = 2
+text = "USER_INTERFACE"
+
+[node name="VBoxDisplay" parent="." instance=ExtResource("1_a06eu")]
+visible = false
+layout_mode = 2
+
+[node name="VBoxAudio" parent="." instance=ExtResource("2_fq7gl")]
+visible = false
+layout_mode = 2
+
+[node name="VBoxUserInterface" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="LanguageDropDown" parent="VBoxUserInterface" instance=ExtResource("3_p53a2")]
+layout_mode = 2
+script = ExtResource("6_nyty4")
+label_text = "LANGUAGE"
+options = {
+"cs": "Čeština",
+"de": "Deutsch",
+"en": "English",
+"es": "Español",
+"fr": "Français",
+"hu": "Magyar",
+"it": "Italiano",
+"nl": "Nederlands",
+"ro": "Română",
+"tr": "Türkçe"
+}
+default_option = "en"
+save_file_settings = {
+"group": "INTERNATIONALIZATION",
+"property": "LANGUAGE"
+}
+
+[node name="Cursor" parent="VBoxUserInterface" instance=ExtResource("4_n0fm8")]
+layout_mode = 2
+
+[node name="SeparatorTabsBack" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="ButtonBackToCategories" type="Button" parent="."]
+visible = false
+layout_mode = 2
+text = "BACK_TO_CATEGORIES"
+
+[node name="ButtonBackToMenu" type="Button" parent="."]
+layout_mode = 2
+theme_type_variation = &"ButtonRedExit"
+text = "BACK_TO_MENU"
+
+[connection signal="pressed" from="VBoxCategories/Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="VBoxCategories/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="VBoxCategories/UserInterface" to="." method="_on_user_interface_pressed"]
+[connection signal="pressed" from="ButtonBackToCategories" to="." method="_on_button_back_to_categories_pressed"]
+[connection signal="pressed" from="ButtonBackToMenu" to="." method="_on_button_back_to_menu_pressed"]

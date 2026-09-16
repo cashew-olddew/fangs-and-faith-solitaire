@@ -1,0 +1,115 @@
+[gd_scene load_steps=18 format=3 uid="uid://cog3rftpicoru"]
+
+[ext_resource type="Script" uid="uid://dv2e8emft2rbv" path="res://scripts/game/game.gd" id="1_4e5uj"]
+[ext_resource type="Shader" uid="uid://5bs7e1a065sj" path="res://shaders/blur.gdshader" id="2_akud0"]
+[ext_resource type="PackedScene" uid="uid://dpxod18olmce5" path="res://scenes/managers/board_manager.tscn" id="3_5v6r0"]
+[ext_resource type="Shader" uid="uid://d1x7fjf8t08a1" path="res://shaders/darken.gdshader" id="3_hxcnx"]
+[ext_resource type="Script" uid="uid://ddlvnmewvo7d5" path="res://scripts/game/overlay_manager.gd" id="12_ar745"]
+[ext_resource type="PackedScene" uid="uid://syhqimqq40x" path="res://scenes/ui/game_ui.tscn" id="18_d34ui"]
+[ext_resource type="Script" uid="uid://b21xbaivfynwh" path="res://scripts/ui/nails.gd" id="19_c7gs8"]
+[ext_resource type="Texture2D" uid="uid://dtljju5o3iaxd" path="res://assets/ui/buttons/reset_normal_red.png" id="19_ewpdr"]
+[ext_resource type="Texture2D" uid="uid://cx0yt67yyd4aq" path="res://assets/ui/buttons/reset_pressed_red.png" id="20_bykwc"]
+[ext_resource type="Texture2D" uid="uid://ct64hxok56n6s" path="res://assets/ui/buttons/pause_normal.png" id="23_bh5wm"]
+[ext_resource type="Texture2D" uid="uid://cghpxnhdokl2b" path="res://assets/ui/buttons/pause_pressed.png" id="24_2qoy1"]
+[ext_resource type="Texture2D" uid="uid://daodjl82ja7kq" path="res://assets/backgrounds/game_background.png" id="24_cuxyo"]
+[ext_resource type="Texture2D" uid="uid://cvqvx62bf0mgu" path="res://assets/ui/buttons/Info_normal.png" id="25_oq53u"]
+[ext_resource type="Texture2D" uid="uid://cwkyddovhfuks" path="res://assets/ui/buttons/info_pressed.png" id="26_sq0d6"]
+[ext_resource type="Script" uid="uid://bbfi6c45dv23n" path="res://scenes/game/camera.gd" id="33_d38qs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6w7ea"]
+shader = ExtResource("3_hxcnx")
+shader_parameter/lod = 0.271
+shader_parameter/mix_percentage = 0.236
+shader_parameter/darken_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o0hml"]
+shader = ExtResource("2_akud0")
+shader_parameter/speed = 0.0
+shader_parameter/blur_amount = 1.5
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_4e5uj")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("24_cuxyo")
+centered = false
+
+[node name="BoardManager" parent="." instance=ExtResource("3_5v6r0")]
+
+[node name="OverlayManager" type="Node2D" parent="." groups=["overlay"]]
+z_index = 500
+script = ExtResource("12_ar745")
+
+[node name="DarkenOverlay" type="ColorRect" parent="OverlayManager"]
+visible = false
+material = SubResource("ShaderMaterial_6w7ea")
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="BlurOverlay" type="ColorRect" parent="OverlayManager"]
+visible = false
+material = SubResource("ShaderMaterial_o0hml")
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="UI" parent="." instance=ExtResource("18_d34ui")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Nails" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("19_c7gs8")
+
+[node name="ResetButton" type="TextureButton" parent="UI/Nails"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 2.0
+anchor_bottom = 2.0
+offset_top = -5.0
+offset_right = 128.0
+offset_bottom = 85.0
+texture_normal = ExtResource("19_ewpdr")
+texture_pressed = ExtResource("20_bykwc")
+texture_hover = ExtResource("19_ewpdr")
+
+[node name="PauseButton" type="TextureButton" parent="UI/Nails"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 15.0
+anchor_bottom = 15.0
+offset_top = -14.0
+offset_right = 128.0
+offset_bottom = 76.0
+texture_normal = ExtResource("23_bh5wm")
+texture_pressed = ExtResource("24_2qoy1")
+texture_hover = ExtResource("23_bh5wm")
+
+[node name="InfoButton" type="TextureButton" parent="UI/Nails"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 22.0
+anchor_bottom = 22.0
+offset_top = -45.5
+offset_right = 130.0
+offset_bottom = 45.5
+grow_vertical = 2
+texture_normal = ExtResource("25_oq53u")
+texture_pressed = ExtResource("26_sq0d6")
+texture_hover = ExtResource("25_oq53u")
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
+visible = false
+anchor_mode = 0
+script = ExtResource("33_d38qs")
+
+[connection signal="game_state_changed" from="BoardManager" to="UI" method="_on_board_manager_game_state_changed"]
+[connection signal="quit_game" from="UI" to="." method="exit_to_desktop"]
+[connection signal="pressed" from="UI/Nails/ResetButton" to="UI" method="_on_reset_button_pressed"]
+[connection signal="pressed" from="UI/Nails/PauseButton" to="UI" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="UI/Nails/InfoButton" to="UI" method="show_tutorial"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsgya5bqe0ul1"]
+
+[ext_resource type="PackedScene" uid="uid://m45wdp3xi53r" path="res://scenes/ui/labeled_drop_down.tscn" id="1_q4f8w"]
+[ext_resource type="Script" uid="uid://b6o4v338xfqs1" path="res://scripts/ui/difficulty_drop_down.gd" id="2_ksq27"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q4f8w"]
+
+[node name="DifficultyDropDown" instance=ExtResource("1_q4f8w")]
+script = ExtResource("2_ksq27")
+
+[node name="VSeparator" type="VSeparator" parent="." index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_q4f8w")

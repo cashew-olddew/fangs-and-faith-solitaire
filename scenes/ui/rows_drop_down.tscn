@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd7h6gmwcc6hp"]
+
+[ext_resource type="PackedScene" uid="uid://m45wdp3xi53r" path="res://scenes/ui/labeled_drop_down.tscn" id="1_6ks8q"]
+[ext_resource type="Script" uid="uid://cdnqjloaihiom" path="res://scripts/ui/rows_drop_down.gd" id="2_ucrhp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucrhp"]
+
+[node name="RowsDropDown" instance=ExtResource("1_6ks8q")]
+script = ExtResource("2_ucrhp")
+
+[node name="VSeparator" type="VSeparator" parent="." index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ucrhp")

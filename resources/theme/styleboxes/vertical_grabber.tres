@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dbwgcdy3s2sku"]
+
+[ext_resource type="Texture2D" uid="uid://dhw401s1fysp5" path="res://assets/ui/sliders/Slider01_rotated.png" id="1_qnaoa"]
+
+[resource]
+texture = ExtResource("1_qnaoa")
+texture_margin_left = 10.0
+texture_margin_top = 12.0
+texture_margin_right = 10.0
+texture_margin_bottom = 12.0

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GameSettings" load_steps=2 format=3 uid="uid://gx46d5q0iipo"]
+
+[ext_resource type="Script" uid="uid://bu0f8lgbb3xg7" path="res://scripts/resources/game_settings.gd" id="1_btbvo"]
+
+[resource]
+script = ExtResource("1_btbvo")
+game_mode = 0
+num_columns = 0
+transformation_frequency = 0.0

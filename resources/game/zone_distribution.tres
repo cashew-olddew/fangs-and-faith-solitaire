@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ZoneDistribution" load_steps=2 format=3 uid="uid://xtjivlwm82op"]
+
+[ext_resource type="Script" uid="uid://ccny5n6o3ri3t" path="res://scripts/resources/zone_distribution.gd" id="1_skfvb"]
+
+[resource]
+script = ExtResource("1_skfvb")
+number = 6
+container_margin = Vector2(300, 70)

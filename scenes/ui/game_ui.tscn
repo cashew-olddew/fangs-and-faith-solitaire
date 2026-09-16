@@ -1,0 +1,206 @@
+[gd_scene load_steps=19 format=3 uid="uid://syhqimqq40x"]
+
+[ext_resource type="Shader" uid="uid://5bs7e1a065sj" path="res://shaders/blur.gdshader" id="1_ku4ik"]
+[ext_resource type="Theme" uid="uid://yk5ww36oyeyk" path="res://resources/theme/vampire_theme.tres" id="2_yn6lv"]
+[ext_resource type="Script" uid="uid://cxx3eynmruw1y" path="res://scripts/ui/game_settings.gd" id="3_ucfwv"]
+[ext_resource type="PackedScene" uid="uid://wauql8qtfcvd" path="res://scenes/ui/settings.tscn" id="4_e67hw"]
+[ext_resource type="Script" uid="uid://b1y6ubtlv2n0g" path="res://scripts/ui/tutorial_page_handler.gd" id="5_8fcld"]
+[ext_resource type="PackedScene" uid="uid://hucwqgyvuv2i" path="res://scenes/ui/tutorial_box.tscn" id="6_io7dl"]
+[ext_resource type="Texture2D" uid="uid://svdbquewngac" path="res://assets/tutorial/tut1.png" id="7_m3lbc"]
+[ext_resource type="Texture2D" uid="uid://xyr2xupo33of" path="res://assets/tutorial/tut2_1.png" id="8_pbku6"]
+[ext_resource type="Texture2D" uid="uid://bwgsrrdbxqoj7" path="res://assets/tutorial/tut3.png" id="9_p4lnl"]
+[ext_resource type="Texture2D" uid="uid://dnt01h8y7vatv" path="res://assets/tutorial/tut3_1.png" id="9_pbku6"]
+[ext_resource type="Texture2D" uid="uid://mfbihdmtlrpl" path="res://assets/tutorial/tut4.png" id="10_ls5yg"]
+[ext_resource type="Texture2D" uid="uid://cwegeybrwrvyk" path="res://assets/tutorial/tut7.png" id="11_n7gqj"]
+[ext_resource type="Texture2D" uid="uid://3eri06nyoxuo" path="res://assets/tutorial/tut5.png" id="12_tblat"]
+[ext_resource type="Texture2D" uid="uid://d5psyw7sdira" path="res://assets/tutorial/tut6.png" id="13_v37rh"]
+[ext_resource type="Texture2D" uid="uid://dx8lwmn7j1pe0" path="res://assets/tutorial/tut8.png" id="14_lwk18"]
+[ext_resource type="Texture2D" uid="uid://cf3qcxgwnohae" path="res://assets/tutorial/tut10_1.png" id="16_pbku6"]
+[ext_resource type="PackedScene" uid="uid://bgs552gav8epd" path="res://scenes/ui/game_over.tscn" id="17_pbku6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ex85"]
+shader = ExtResource("1_ku4ik")
+shader_parameter/speed = 0.0
+shader_parameter/blur_amount = 1.5
+
+[node name="UIButtons" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_ucfwv")
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BlurContainer" type="PanelContainer" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_7ex85")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_yn6lv")
+theme_type_variation = &"PanelContainerSimple"
+
+[node name="MarginSettings" type="MarginContainer" parent="CanvasLayer/BlurContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 200
+
+[node name="VBoxMainMenu" type="VBoxContainer" parent="CanvasLayer/BlurContainer/MarginSettings"]
+layout_mode = 2
+
+[node name="LabelResumeGame" type="Label" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu"]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "PAUSE_TITLE"
+horizontal_alignment = 1
+
+[node name="SeparatorTitleButtons" type="HSeparator" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="VBoxMainButtons" type="VBoxContainer" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ButtonResumeGame" type="Button" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+text = "RESUME"
+
+[node name="ButtonGameRules" type="Button" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+text = "GAME_RULES"
+
+[node name="ButtonSettings" type="Button" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="SeparatorButtonsExit" type="HSeparator" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="ButtonExitToMenu" type="Button" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+theme_type_variation = &"ButtonRedExit"
+text = "EXIT_TO_MENU"
+
+[node name="ButtonExit" type="Button" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+theme_type_variation = &"ButtonRedExit"
+text = "EXIT"
+
+[node name="VBoxSettings" type="VBoxContainer" parent="CanvasLayer/BlurContainer/MarginSettings"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LabelGameTitle" type="Label" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxSettings"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"LabelTitle"
+text = "SETTINGS_TITLE"
+horizontal_alignment = 1
+
+[node name="SeparatorTitleButtons" type="HSeparator" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxSettings"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="VBoxSettings" parent="CanvasLayer/BlurContainer/MarginSettings/VBoxSettings" instance=ExtResource("4_e67hw")]
+layout_mode = 2
+
+[node name="MarginTutorial" type="MarginContainer" parent="CanvasLayer/BlurContainer"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 150
+script = ExtResource("5_8fcld")
+
+[node name="Page1" parent="CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("6_io7dl")]
+layout_mode = 2
+text = "TUTORIAL_PAGE_1"
+texture = ExtResource("7_m3lbc")
+is_first = true
+
+[node name="Page2" parent="CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("6_io7dl")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_2"
+texture = ExtResource("8_pbku6")
+progress_pages = 2
+
+[node name="Page3" parent="CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("6_io7dl")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_3"
+texture = ExtResource("9_pbku6")
+progress_pages = 3
+
+[node name="Page4" parent="CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("6_io7dl")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_4"
+texture = ExtResource("9_p4lnl")
+progress_pages = 4
+
+[node name="Page5" parent="CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("6_io7dl")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_5"
+texture = ExtResource("10_ls5yg")
+progress_pages = 5
+
+[node name="Page6" parent="CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("6_io7dl")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_6"
+texture = ExtResource("12_tblat")
+progress_pages = 6
+
+[node name="Page7" parent="CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("6_io7dl")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_7"
+texture = ExtResource("13_v37rh")
+progress_pages = 7
+
+[node name="Page8" parent="CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("6_io7dl")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_8"
+texture = ExtResource("11_n7gqj")
+progress_pages = 8
+
+[node name="Page9" parent="CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("6_io7dl")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_9"
+texture = ExtResource("14_lwk18")
+progress_pages = 9
+
+[node name="Page10" parent="CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("6_io7dl")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_10"
+texture = ExtResource("16_pbku6")
+is_last = true
+progress_pages = 10
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("17_pbku6")]
+mouse_filter = 0
+
+[connection signal="pressed" from="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons/ButtonResumeGame" to="." method="_on_button_resume_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons/ButtonGameRules" to="." method="_on_button_game_rules_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons/ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons/ButtonExitToMenu" to="." method="_on_button_exit_to_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="button_back_pressed" from="CanvasLayer/BlurContainer/MarginSettings/VBoxSettings/VBoxSettings" to="." method="_on_back_button_pressed"]
+[connection signal="back_button_pressed" from="CanvasLayer/GameOver" to="." method="_on_game_over_back_button_pressed"]
+[connection signal="play_again_button_pressed" from="CanvasLayer/GameOver" to="." method="_on_game_over_play_again_button_pressed"]

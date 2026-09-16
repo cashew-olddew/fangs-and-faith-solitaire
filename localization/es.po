@@ -1,0 +1,295 @@
+# LANGUAGE translation for vampire-solitaire for the following files:
+# res://scenes/main.tscn
+# res://scenes/tutorial_box.tscn
+# res://scenes/main_menu.tscn
+# res://ui_components/language.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: vampire-solitaire\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#: scenes/ui/cursor.tscn
+msgid "SYSTEM_CURSOR"
+msgstr "Usar Cursor de Sistema"
+
+#: scenes/ui/display.tscn
+msgid "FULL_SCREEN"
+msgstr "Pantalla Completa"
+
+#: scenes/ui/display.tscn
+msgid "SCREEN_RESOLUTION"
+msgstr "Resolución de Pantalla"
+
+#: scenes/ui/settings.tscn
+msgid "VIDEO"
+msgstr "Video"
+
+#: scenes/ui/settings.tscn
+msgid "AUDIO"
+msgstr "Audio"
+
+#: scenes/ui/settings.tscn
+msgid "USER_INTERFACE"
+msgstr "Interfaz de Usuario"
+
+#: scenes/ui/settings.tscn
+msgid "LANGUAGE"
+msgstr "Idioma"
+
+#: scenes/ui/settings.tscn
+msgid "BACK_TO_CATEGORIES"
+msgstr "Volver a Categorías"
+
+#: scenes/ui/settings.tscn scenes/ui/main_menu.tscn scenes/ui/game_over.tscn
+msgid "BACK_TO_MENU"
+msgstr "Volver al Menú"
+
+#: scenes/ui/volume.tscn
+msgid "SFX_VOLUME"
+msgstr "Volumen de Efectos"
+
+#: scenes/ui/volume.tscn
+msgid "MUSIC_VOLUME"
+msgstr "Volumen de la Música"
+
+#: scenes/ui/volume.tscn
+msgid "TRACK"
+msgstr "Pista"
+
+#: scenes/ui/main_menu.tscn
+msgid "Fangs & Faith"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "Solitaire"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "NEW_GAME"
+msgstr "Nueva Partida"
+
+#: scenes/ui/main_menu.tscn scenes/ui/game_ui.tscn
+msgid "SETTINGS"
+msgstr "Configuración"
+
+#: scenes/ui/main_menu.tscn
+msgid "CREDITS"
+msgstr "Créditos"
+
+#: scenes/ui/main_menu.tscn scenes/ui/game_ui.tscn
+msgid "EXIT"
+msgstr "Salir"
+
+#: scenes/ui/main_menu.tscn
+msgid "MODE"
+msgstr "Modo"
+
+#: scenes/ui/main_menu.tscn
+msgid "ROWS"
+msgstr "Filas"
+
+#: scenes/ui/main_menu.tscn
+msgid "DIFFICULTY"
+msgstr "Dificultad"
+
+#: scenes/ui/main_menu.tscn
+msgid "START"
+msgstr "Iniciar"
+
+#: scenes/ui/main_menu.tscn
+msgid "OTHER_ASSETS"
+msgstr "Otros Recursos"
+
+#: scenes/ui/main_menu.tscn
+msgid "LOCALIZATION"
+msgstr "Localización"
+
+#: scenes/ui/game_over.tscn
+msgid "YOU_WON"
+msgstr "HAS GANADO"
+
+#: scenes/ui/game_over.tscn
+msgid "GAME_OVER"
+msgstr "No hay más movimientos"
+
+#: scenes/ui/game_over.tscn
+msgid "PLAY_AGAIN"
+msgstr "Jugar de nuevo"
+
+#: scenes/ui/game_ui.tscn
+msgid "PAUSE_TITLE"
+msgstr "Juego en Pausa"
+
+#: scenes/ui/game_ui.tscn
+msgid "RESUME"
+msgstr "Continuar"
+
+#: scenes/ui/game_ui.tscn
+msgid "GAME_RULES"
+msgstr "Reglas del Juego"
+
+#: scenes/ui/game_ui.tscn
+msgid "EXIT_TO_MENU"
+msgstr "Salir al Menú"
+
+#: scenes/ui/game_ui.tscn
+msgid "SETTINGS_TITLE"
+msgstr "Configuración"
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_1"
+msgstr ""
+"El juego sigue las reglas del solitario clásico.\n"
+"\n"
+"Puedes apilar cartas si son de diferentes colores y tienen números "
+"consecutivos decrecientes."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_2"
+msgstr ""
+"Las cartas numeradas se pueden recolectar arrastrándolas sobre estas "
+"ranuras.\n"
+"¡Ganas si las recolectas todas!"
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_3"
+msgstr ""
+"Los recolectores brillan cuando una carta puede ser recolectada.\n"
+"Haz clic en ellos para recolectar automáticamente o arrastra la carta sobre "
+"ellos."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_4"
+msgstr ""
+"Hay dos cartas especiales: el [color=#ffe050]Sacerdote[/color] y el "
+"[color=a40000]Vampiro[/color].\n"
+"\n"
+"Mientras están activas, tienen un efecto especial que ocurre después de cada "
+"movimiento."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_5"
+msgstr ""
+"El [color=a40000]Vampiro[/color] morderá a aldeanos inocentes (cartas "
+"negras) y los convertirá en vampiros (cartas rojas).\n"
+"\n"
+"Su siguiente objetivo se escoge al azar y está rodeado con humo rojo "
+"alrededor de la carta."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_6"
+msgstr ""
+"El [color=#ffe050]Sacerdote[/color] curará a los vampiros (cartas rojas) y "
+"los convertirá en aldeanos (cartas negras).\n"
+"\n"
+"Su siguiente objetivo se escoge al azar y está rodeado de energía sagrada "
+"alrededor de la carta."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_7"
+msgstr ""
+"Las cartas especiales se colocan automáticamente en su guarida cuando se \n"
+"descubren. Solo están activas mientras están en su guarida.\n"
+"\n"
+"La guarida del [color=#ffe050]Sacerdote[/color] es la bandeja plateada y la "
+"del [color=a40000]Vampiro[/color] es el ataúd."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_8"
+msgstr ""
+"Hay tres zonas neutrales.\n"
+"Cada zona neutral puede guardar una carta a la vez (sin importar su color).\n"
+"\n"
+"Mover una carta entre áreas neutrales no se considera un movimiento."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_9"
+msgstr ""
+"Coloca cartas especiales en una zona neutral para desactivarlas, o mantenlas "
+"cubiertas bajo otras para que no se activen.\n"
+"\n"
+"Desactivar una carta especial no se considera un movimiento."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_10"
+msgstr ""
+"Controla el juego usando los clavos.\n"
+"\n"
+"El clavo de [color=a40000]Reiniciar[/color] comienza una nueva partida.\n"
+"Abre el menú del juego con el clavo [color=#ffe050]Pausa[/color].\n"
+"Si alguna vez quieres volver al tutorial, haz clic en el botón "
+"[color=#ffe050]Info[/color].\n"
+"\n"
+"¡Esperamos que disfrutes del juego!"
+
+#: scenes/ui/tutorial_box.tscn
+msgid "1/2"
+msgstr ""
+
+#: scenes/ui/tutorial_box.tscn
+msgid "BACK"
+msgstr "Volver"
+
+#: scenes/ui/tutorial_box.tscn
+msgid "NEXT"
+msgstr "Siguiente"
+
+#: scenes/ui/tutorial_box.tscn
+msgid "FINISH"
+msgstr "Finalizar Tutorial"
+
+#: scenes/ui/mode_drop_down.tscn
+msgid "CASUAL"
+msgstr "Casual"
+
+#: scenes/ui/rows_drop_down.tscn
+msgid "FOUR"
+msgstr "Cuatro"
+
+#: scenes/ui/rows_drop_down.tscn
+msgid "FIVE"
+msgstr "Cinco"
+
+#: scenes/ui/rows_drop_down.tscn
+msgid "SIX"
+msgstr "Seis"
+
+#: scenes/ui/difficulty_drop_down.tscn
+msgid "WISHFUL"
+msgstr "Esperanzado"
+
+#: scenes/ui/difficulty_drop_down.tscn
+msgid "WARY"
+msgstr "Precavido"
+
+#: scenes/ui/difficulty_drop_down.tscn
+msgid "HOPELESS"
+msgstr "Desesperado"
+
+#: scenes/ui/separated_labels.tscn
+msgid "ART_AND_PROGRAMMING"
+msgstr "Arte y Programación"
+
+#: scenes/ui/separated_labels.tscn
+msgid "PROGRAMMING"
+msgstr "Programación"
+
+#: scenes/ui/separated_labels.tscn
+msgid "BACKGROUND_MUSIC"
+msgstr "Música de Fondo"
+
+#: scenes/ui/separated_labels.tscn
+msgid "SOUND_EFFECTS"
+msgstr "Efectos de Sonido"

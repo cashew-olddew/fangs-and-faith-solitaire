@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwo745ajiymax"]
+
+[ext_resource type="Script" uid="uid://b10q26l2areii" path="res://scripts/ui/display.gd" id="1_itr7g"]
+[ext_resource type="Theme" uid="uid://yk5ww36oyeyk" path="res://resources/theme/vampire_theme.tres" id="1_wfoo8"]
+
+[node name="VBoxDisplay" type="VBoxContainer"]
+offset_right = 270.0
+offset_bottom = 127.0
+theme = ExtResource("1_wfoo8")
+script = ExtResource("1_itr7g")
+
+[node name="HBoxFullScreen" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="LabelFullScreen" type="Label" parent="HBoxFullScreen"]
+layout_mode = 2
+text = "FULL_SCREEN"
+horizontal_alignment = 3
+
+[node name="CheckBoxFullScreen" type="CheckBox" parent="HBoxFullScreen"]
+layout_mode = 2
+focus_mode = 0
+
+[node name="HBoxScreenResolution" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="LabelResolution" type="Label" parent="HBoxScreenResolution"]
+layout_mode = 2
+text = "SCREEN_RESOLUTION"
+
+[node name="OptionButtonResolution" type="OptionButton" parent="HBoxScreenResolution"]
+layout_mode = 2
+
+[connection signal="toggled" from="HBoxFullScreen/CheckBoxFullScreen" to="." method="_on_check_box_full_screen_toggled"]
+[connection signal="item_selected" from="HBoxScreenResolution/OptionButtonResolution" to="." method="_on_option_button_resolution_item_selected"]

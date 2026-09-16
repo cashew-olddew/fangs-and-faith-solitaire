@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://dvdjx4ii3o1d"]
+
+[ext_resource type="Script" uid="uid://bflsv4rtbuo0e" path="res://scripts/game/card.gd" id="1_fa4oo"]
+[ext_resource type="Texture2D" uid="uid://cwdyk7dyicjdt" path="res://assets/cards/blank_black_small.png" id="2_rsart"]
+[ext_resource type="Texture2D" uid="uid://4glnwp76yrt1" path="res://assets/faces/man_black.png" id="3_r6mks"]
+[ext_resource type="Script" uid="uid://c1hlotxyuxsp7" path="res://scripts/game/state/state_machine.gd" id="4_tyfga"]
+[ext_resource type="Script" uid="uid://dd8u4tijbxvkv" path="res://scripts/game/card_states/state_idle.gd" id="5_t8jfc"]
+[ext_resource type="Script" uid="uid://cwq2qcohgehlt" path="res://scripts/game/card_states/state_in_hand.gd" id="6_8jlry"]
+[ext_resource type="Script" uid="uid://xsacyhegc1jj" path="res://scripts/game/card_states/state_returning.gd" id="7_g8q0k"]
+[ext_resource type="Script" uid="uid://cscqjlgai6dql" path="res://scripts/game/card_states/state_falling.gd" id="8_03ijb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bls3"]
+size = Vector2(863, 538)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s408"]
+size = Vector2(216, 134)
+
+[node name="Card" type="Area2D"]
+script = ExtResource("1_fa4oo")
+
+[node name="Images" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Back" type="TextureRect" parent="Images"]
+layout_mode = 0
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(450, 300)
+texture = ExtResource("2_rsart")
+
+[node name="Face" type="TextureRect" parent="Images"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(450, 300)
+texture = ExtResource("3_r6mks")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("4_tyfga")
+current_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("5_t8jfc")
+
+[node name="InHand" type="Node" parent="StateMachine"]
+script = ExtResource("6_8jlry")
+
+[node name="Returning" type="Node" parent="StateMachine"]
+script = ExtResource("7_g8q0k")
+
+[node name="Falling" type="Node" parent="StateMachine"]
+script = ExtResource("8_03ijb")
+
+[node name="NeighborMarker" type="Marker2D" parent="."]
+position = Vector2(48, 0)
+
+[node name="ZoneCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.125, 0.75)
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_3bls3")
+
+[node name="DragArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="DragCollision" type="CollisionShape2D" parent="DragArea"]
+shape = SubResource("RectangleShape2D_1s408")
+debug_color = Color(0.834709, 0.298185, 0.63839, 0.42)
+
+[connection signal="input_event" from="DragArea" to="." method="_on_drag_area_input_event"]

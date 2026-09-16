@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c33x14dxxrkp8"]
+
+[ext_resource type="PackedScene" uid="uid://w8qgmqcgj501" path="res://scenes/game/zone.tscn" id="1_me60a"]
+[ext_resource type="Script" uid="uid://rk3kgw83cljo" path="res://scripts/game/collector_zone.gd" id="2_d27yp"]
+[ext_resource type="Shader" uid="uid://bapx16ukid3ny" path="res://shaders/collector_zone.gdshader" id="3_w857u"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w857u"]
+frequency = 0.0127
+offset = Vector3(516.13, 0, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_o4x1m"]
+seamless = true
+noise = SubResource("FastNoiseLite_w857u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fq0o2"]
+shader = ExtResource("3_w857u")
+shader_parameter/glow_color = Color(1, 1, 0, 1)
+shader_parameter/box_radius = 0.32
+shader_parameter/corner_radius = -0.04
+shader_parameter/softness = 0.145
+shader_parameter/slowdown = 10.0
+shader_parameter/glow_texture = SubResource("NoiseTexture2D_o4x1m")
+shader_parameter/texture_opacity = 0.6
+shader_parameter/texture_scale = 0.75
+
+[node name="CollectorZone" instance=ExtResource("1_me60a")]
+script = ExtResource("2_d27yp")
+suit = 1
+
+[node name="Effects" type="Node2D" parent="." index="0"]
+
+[node name="Glow" type="ColorRect" parent="Effects" index="0"]
+material = SubResource("ShaderMaterial_fq0o2")
+offset_left = -144.0
+offset_top = -91.0
+offset_right = 144.0
+offset_bottom = 91.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="InputPicker" type="ColorRect" parent="." index="3"]
+offset_left = -108.0
+offset_top = -67.0
+offset_right = 109.0
+offset_bottom = 67.0
+color = Color(1, 1, 1, 0)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="gui_input" from="InputPicker" to="." method="_on_color_rect_gui_input"]

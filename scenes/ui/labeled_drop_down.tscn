@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://m45wdp3xi53r"]
+
+[ext_resource type="Script" uid="uid://crpa4qmfsv0ji" path="res://scripts/ui/labeled_dropdown.gd" id="1_uu3va"]
+
+[node name="LabeledDropDown" type="HBoxContainer"]
+offset_right = 136.0
+offset_bottom = 23.0
+script = ExtResource("1_uu3va")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_type_variation = &"LabelMenu"
+horizontal_alignment = 3
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

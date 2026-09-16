@@ -1,0 +1,280 @@
+[gd_scene load_steps=30 format=3 uid="uid://cog3rftpicoru"]
+
+[ext_resource type="Script" path="res://scripts/game/game.gd" id="1_4e5uj"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_akud0"]
+[ext_resource type="Theme" uid="uid://yk5ww36oyeyk" path="res://resources/theme/vampire_theme.tres" id="3_am4ys"]
+[ext_resource type="Script" path="res://scripts/game/zone_manager.gd" id="3_wdl7t"]
+[ext_resource type="PackedScene" uid="uid://wauql8qtfcvd" path="res://scenes/ui/settings.tscn" id="4_lkfus"]
+[ext_resource type="Resource" uid="uid://xtjivlwm82op" path="res://resources/game/zone_distribution.tres" id="4_loyx7"]
+[ext_resource type="Script" path="res://scripts/ui/game_settings.gd" id="4_olo6e"]
+[ext_resource type="PackedScene" uid="uid://hucwqgyvuv2i" path="res://scenes/ui/tutorial_box.tscn" id="5_c1168"]
+[ext_resource type="Script" path="res://scripts/ui/tutorial_page_handler.gd" id="5_ucftd"]
+[ext_resource type="Texture2D" uid="uid://ghxl60vgh8ev" path="res://assets/zones/empty_zone.png" id="6_5jre8"]
+[ext_resource type="Texture2D" uid="uid://t34b0ghx8n1s" path="res://assets/tutorial/tut1.png" id="6_yvpgd"]
+[ext_resource type="Texture2D" uid="uid://1ptnj4qguknu" path="res://assets/tutorial/tut2.png" id="7_38ue0"]
+[ext_resource type="Texture2D" uid="uid://cxkh48r6p8d5e" path="res://assets/tutorial/tut3.png" id="8_p63pg"]
+[ext_resource type="Texture2D" uid="uid://cdm27brquk7lq" path="res://assets/tutorial/tut4.png" id="9_wx0s3"]
+[ext_resource type="Texture2D" uid="uid://cwdyk7dyicjdt" path="res://assets/cards/blank_black_small.png" id="10_3a037"]
+[ext_resource type="Texture2D" uid="uid://tkgi4rghe8r3" path="res://assets/tutorial/tut5.png" id="10_3ldvh"]
+[ext_resource type="Texture2D" uid="uid://ccitw782jq86v" path="res://assets/tutorial/tut6.png" id="11_l5yqc"]
+[ext_resource type="Texture2D" uid="uid://deoq30bla71hr" path="res://assets/tutorial/tut7.png" id="12_ya64n"]
+[ext_resource type="Texture2D" uid="uid://dosuqh3m0hdm0" path="res://assets/tutorial/tut8.png" id="13_36j11"]
+[ext_resource type="Texture2D" uid="uid://6ijwc321o18" path="res://assets/tutorial/tut9.png" id="14_nx34r"]
+[ext_resource type="Texture2D" uid="uid://bojna37s1ndro" path="res://assets/tutorial/tut10.png" id="15_w2s0y"]
+[ext_resource type="PackedScene" uid="uid://bwgdj10iq3c3o" path="res://scenes/game/normal_card.tscn" id="18_twpvw"]
+[ext_resource type="Texture2D" uid="uid://4glnwp76yrt1" path="res://assets/faces/man_black.png" id="20_3h7ev"]
+[ext_resource type="Texture2D" uid="uid://daodjl82ja7kq" path="res://assets/backgrounds/game_background.png" id="24_cuxyo"]
+[ext_resource type="PackedScene" uid="uid://c33x14dxxrkp8" path="res://scenes/game/collector_zone.tscn" id="25_fi7kr"]
+[ext_resource type="PackedScene" uid="uid://dxyo05k8puq8h" path="res://scenes/game/special_zone.tscn" id="28_ebq2b"]
+[ext_resource type="Script" path="res://scripts/game/deck_manager.gd" id="28_k8s5w"]
+[ext_resource type="PackedScene" uid="uid://dl2tjswse6lxn" path="res://scenes/game/normal_zone.tscn" id="30_o7jcw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ex85"]
+shader = ExtResource("2_akud0")
+shader_parameter/speed = null
+shader_parameter/blur_amount = 1.5
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_4e5uj")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("24_cuxyo")
+centered = false
+
+[node name="BoardManager" type="Node2D" parent="."]
+
+[node name="ZoneManager" type="Node2D" parent="BoardManager"]
+script = ExtResource("3_wdl7t")
+zone_distribution = ExtResource("4_loyx7")
+
+[node name="Normals" type="Node2D" parent="BoardManager/ZoneManager"]
+
+[node name="Collectors" type="Node2D" parent="BoardManager/ZoneManager"]
+
+[node name="CollectorZonePriest" parent="BoardManager/ZoneManager/Collectors" instance=ExtResource("25_fi7kr")]
+position = Vector2(1723, 378)
+texture = ExtResource("6_5jre8")
+
+[node name="CollectorZoneVampire" parent="BoardManager/ZoneManager/Collectors" instance=ExtResource("25_fi7kr")]
+position = Vector2(1724, 702)
+texture = ExtResource("6_5jre8")
+
+[node name="Specials" type="Node2D" parent="BoardManager/ZoneManager"]
+
+[node name="SpecialZonePriest" parent="BoardManager/ZoneManager/Specials" instance=ExtResource("28_ebq2b")]
+position = Vector2(1726, 122)
+texture = ExtResource("6_5jre8")
+
+[node name="SpecialZoneVampire" parent="BoardManager/ZoneManager/Specials" instance=ExtResource("28_ebq2b")]
+position = Vector2(1726, 956)
+texture = ExtResource("6_5jre8")
+
+[node name="Metals" type="Node2D" parent="BoardManager/ZoneManager"]
+
+[node name="MetalZoneTop" parent="BoardManager/ZoneManager/Metals" instance=ExtResource("30_o7jcw")]
+position = Vector2(1322, 215)
+
+[node name="MetalZoneMid" parent="BoardManager/ZoneManager/Metals" instance=ExtResource("30_o7jcw")]
+position = Vector2(1356, 540)
+
+[node name="MetalZoneBot" parent="BoardManager/ZoneManager/Metals" instance=ExtResource("30_o7jcw")]
+position = Vector2(1325, 862)
+
+[node name="DeckManager" type="Node2D" parent="BoardManager"]
+script = ExtResource("28_k8s5w")
+
+[node name="NormalCard" parent="." instance=ExtResource("18_twpvw")]
+offset_left = 464.0
+offset_top = 331.0
+offset_right = 464.0
+offset_bottom = 331.0
+back_texture = ExtResource("10_3a037")
+face_texture = ExtResource("20_3h7ev")
+metadata/_edit_vertical_guides_ = []
+metadata/_edit_use_anchors_ = true
+
+[node name="UIButtons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Nails" type="Control" parent="UIButtons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UIButtons"]
+
+[node name="BlurContainer" type="PanelContainer" parent="UIButtons/CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_7ex85")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_am4ys")
+theme_type_variation = &"PanelContainerSimple"
+script = ExtResource("4_olo6e")
+
+[node name="MarginSettings" type="MarginContainer" parent="UIButtons/CanvasLayer/BlurContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 200
+
+[node name="VBoxMainMenu" type="VBoxContainer" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings"]
+layout_mode = 2
+
+[node name="LabelResumeGame" type="Label" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu"]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "PAUSE_TITLE"
+horizontal_alignment = 1
+
+[node name="SeparatorTitleButtons" type="HSeparator" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="VBoxMainButtons" type="VBoxContainer" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ButtonResumeGame" type="Button" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+text = "RESUME"
+
+[node name="ButtonGameRules" type="Button" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+text = "GAME_RULES"
+
+[node name="ButtonSettings" type="Button" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="SeparatorButtonsExit" type="HSeparator" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="ButtonExitToMenu" type="Button" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+theme_type_variation = &"ButtonRedExit"
+text = "EXIT_TO_MENU"
+
+[node name="ButtonExit" type="Button" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons"]
+layout_mode = 2
+theme_type_variation = &"ButtonRedExit"
+text = "EXIT"
+
+[node name="VBoxSettings" type="VBoxContainer" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LabelGameTitle" type="Label" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxSettings"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"LabelTitle"
+text = "SETTINGS_TITLE"
+horizontal_alignment = 1
+
+[node name="SeparatorTitleButtons" type="HSeparator" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxSettings"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="VBoxSettings" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxSettings" instance=ExtResource("4_lkfus")]
+layout_mode = 2
+
+[node name="ButtonBack" type="Button" parent="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxSettings"]
+layout_mode = 2
+theme_type_variation = &"ButtonRedExit"
+text = "BACK_TO_MENU"
+
+[node name="MarginTutorial" type="MarginContainer" parent="UIButtons/CanvasLayer/BlurContainer"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 150
+script = ExtResource("5_ucftd")
+
+[node name="Page1" parent="UIButtons/CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("5_c1168")]
+layout_mode = 2
+text = "TUTORIAL_PAGE_1"
+texture = ExtResource("6_yvpgd")
+is_first = true
+
+[node name="Page2" parent="UIButtons/CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("5_c1168")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_2"
+texture = ExtResource("7_38ue0")
+progress_pages = 2
+
+[node name="Page3" parent="UIButtons/CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("5_c1168")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_3"
+texture = ExtResource("8_p63pg")
+progress_pages = 3
+
+[node name="Page4" parent="UIButtons/CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("5_c1168")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_4"
+texture = ExtResource("9_wx0s3")
+progress_pages = 4
+
+[node name="Page5" parent="UIButtons/CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("5_c1168")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_5"
+texture = ExtResource("10_3ldvh")
+progress_pages = 5
+
+[node name="Page6" parent="UIButtons/CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("5_c1168")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_6"
+texture = ExtResource("11_l5yqc")
+progress_pages = 6
+
+[node name="Page7" parent="UIButtons/CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("5_c1168")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_7"
+texture = ExtResource("12_ya64n")
+progress_pages = 7
+
+[node name="Page8" parent="UIButtons/CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("5_c1168")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_8"
+texture = ExtResource("13_36j11")
+progress_pages = 8
+
+[node name="Page9" parent="UIButtons/CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("5_c1168")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_9"
+texture = ExtResource("14_nx34r")
+progress_pages = 9
+
+[node name="Page10" parent="UIButtons/CanvasLayer/BlurContainer/MarginTutorial" instance=ExtResource("5_c1168")]
+visible = false
+layout_mode = 2
+text = "TUTORIAL_PAGE_10"
+texture = ExtResource("15_w2s0y")
+is_last = true
+progress_pages = 10
+
+[connection signal="pressed" from="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons/ButtonResumeGame" to="UIButtons/CanvasLayer/BlurContainer" method="_on_button_resume_game_pressed"]
+[connection signal="pressed" from="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons/ButtonGameRules" to="UIButtons/CanvasLayer/BlurContainer" method="_on_button_game_rules_pressed"]
+[connection signal="pressed" from="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons/ButtonSettings" to="UIButtons/CanvasLayer/BlurContainer" method="_on_button_settings_pressed"]
+[connection signal="pressed" from="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxMainMenu/VBoxMainButtons/ButtonExitToMenu" to="UIButtons/CanvasLayer/BlurContainer" method="_on_button_exit_to_menu_pressed"]
+[connection signal="pressed" from="UIButtons/CanvasLayer/BlurContainer/MarginSettings/VBoxSettings/ButtonBack" to="UIButtons/CanvasLayer/BlurContainer" method="_on_back_button_pressed"]

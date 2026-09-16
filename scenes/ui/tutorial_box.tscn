@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://hucwqgyvuv2i"]
+
+[ext_resource type="Theme" uid="uid://yk5ww36oyeyk" path="res://resources/theme/vampire_theme.tres" id="1_8g2mo"]
+[ext_resource type="Script" uid="uid://dkx2asmytco4" path="res://scripts/ui/tutorial_box.gd" id="2_ufs15"]
+[ext_resource type="PackedScene" uid="uid://2tj507qk1iie" path="res://scenes/ui/ui_sfx.tscn" id="3_bh51b"]
+[ext_resource type="Texture2D" uid="uid://b3288ud3oh5q6" path="res://assets/ui/buttons/Button Close Normal.png" id="3_bv4w3"]
+[ext_resource type="Texture2D" uid="uid://c1ca1puen54hv" path="res://assets/ui/buttons/Button Close Hover.png" id="4_bnks4"]
+
+[node name="TutorialBox" type="PanelContainer"]
+offset_right = 1108.0
+offset_bottom = 658.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_8g2mo")
+script = ExtResource("2_ufs15")
+
+[node name="UISfx" parent="." instance=ExtResource("3_bh51b")]
+
+[node name="VBoxTutorialAndControls" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="QuitButton" type="TextureButton" parent="VBoxTutorialAndControls"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("3_bv4w3")
+texture_pressed = ExtResource("4_bnks4")
+texture_hover = ExtResource("4_bnks4")
+texture_disabled = ExtResource("3_bv4w3")
+texture_focused = ExtResource("3_bv4w3")
+
+[node name="HBoxTutorial" type="HBoxContainer" parent="VBoxTutorialAndControls"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Text" type="RichTextLabel" parent="VBoxTutorialAndControls/HBoxTutorial"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+bbcode_enabled = true
+fit_content = true
+
+[node name="Image" type="TextureRect" parent="VBoxTutorialAndControls/HBoxTutorial"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 2
+
+[node name="LabelProgress" type="Label" parent="VBoxTutorialAndControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1/2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxControls" type="HBoxContainer" parent="VBoxTutorialAndControls"]
+layout_mode = 2
+
+[node name="ButtonPrev" type="Button" parent="VBoxTutorialAndControls/HBoxControls"]
+layout_mode = 2
+theme_type_variation = &"ButtonRed"
+text = "BACK"
+
+[node name="SeparatorTopContainer" type="HSeparator" parent="VBoxTutorialAndControls/HBoxControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="ButtonNext" type="Button" parent="VBoxTutorialAndControls/HBoxControls"]
+layout_mode = 2
+theme_type_variation = &"ButtonRed"
+text = "NEXT"
+
+[connection signal="mouse_entered" from="VBoxTutorialAndControls/QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="pressed" from="VBoxTutorialAndControls/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxTutorialAndControls/HBoxControls/ButtonPrev" to="." method="_on_button_prev_pressed"]
+[connection signal="pressed" from="VBoxTutorialAndControls/HBoxControls/ButtonNext" to="." method="_on_button_next_pressed"]

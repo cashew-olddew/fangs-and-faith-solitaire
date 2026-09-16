@@ -1,0 +1,287 @@
+# LANGUAGE translation for vampire-solitaire for the following files:
+# res://scenes/main.tscn
+# res://scenes/main_menu.tscn
+# res://scenes/tutorial_box.tscn
+# res://ui_components/language.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: vampire-solitaire\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#: scenes/ui/cursor.tscn
+msgid "SYSTEM_CURSOR"
+msgstr "Varsayılan İmleci Kullan"
+
+#: scenes/ui/display.tscn
+msgid "FULL_SCREEN"
+msgstr "Tam Ekran"
+
+#: scenes/ui/display.tscn
+msgid "SCREEN_RESOLUTION"
+msgstr "Ekran Çözünürlüğü"
+
+#: scenes/ui/settings.tscn
+msgid "VIDEO"
+msgstr "Video"
+
+#: scenes/ui/settings.tscn
+msgid "AUDIO"
+msgstr "Ses"
+
+#: scenes/ui/settings.tscn
+msgid "USER_INTERFACE"
+msgstr "Kullanıcı Arayüzü"
+
+#: scenes/ui/settings.tscn
+msgid "LANGUAGE"
+msgstr "Dil"
+
+#: scenes/ui/settings.tscn
+msgid "BACK_TO_CATEGORIES"
+msgstr "Geri Dön"
+
+#: scenes/ui/settings.tscn scenes/ui/main_menu.tscn scenes/ui/game_over.tscn
+msgid "BACK_TO_MENU"
+msgstr "Menüye Geri Dön"
+
+#: scenes/ui/volume.tscn
+msgid "SFX_VOLUME"
+msgstr "SFX Sesi"
+
+#: scenes/ui/volume.tscn
+msgid "MUSIC_VOLUME"
+msgstr "Müzik Sesi"
+
+#: scenes/ui/volume.tscn
+msgid "TRACK"
+msgstr "Parça"
+
+#: scenes/ui/main_menu.tscn
+msgid "Fangs & Faith"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "Solitaire"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "NEW_GAME"
+msgstr "Yeni Oyun"
+
+#: scenes/ui/main_menu.tscn scenes/ui/game_ui.tscn
+msgid "SETTINGS"
+msgstr "Ayarlar"
+
+#: scenes/ui/main_menu.tscn
+msgid "CREDITS"
+msgstr "Katkıda Bulunanlar"
+
+#: scenes/ui/main_menu.tscn scenes/ui/game_ui.tscn
+msgid "EXIT"
+msgstr "Çıkış"
+
+#: scenes/ui/main_menu.tscn
+msgid "MODE"
+msgstr "Mod"
+
+#: scenes/ui/main_menu.tscn
+msgid "ROWS"
+msgstr "Sıralar"
+
+#: scenes/ui/main_menu.tscn
+msgid "DIFFICULTY"
+msgstr "Zorluk"
+
+#: scenes/ui/main_menu.tscn
+msgid "START"
+msgstr "Başla"
+
+#: scenes/ui/main_menu.tscn
+msgid "OTHER_ASSETS"
+msgstr "Diğer assetler"
+
+#: scenes/ui/main_menu.tscn
+msgid "LOCALIZATION"
+msgstr "Yerelleştirme"
+
+#: scenes/ui/game_over.tscn
+msgid "YOU_WON"
+msgstr "KAZANDIN"
+
+#: scenes/ui/game_over.tscn
+msgid "GAME_OVER"
+msgstr "Hamle kalmadı"
+
+#: scenes/ui/game_over.tscn
+msgid "PLAY_AGAIN"
+msgstr "Tekrar Oyna"
+
+#: scenes/ui/game_ui.tscn
+msgid "PAUSE_TITLE"
+msgstr "Oyun Durdu"
+
+#: scenes/ui/game_ui.tscn
+msgid "RESUME"
+msgstr "Oyuna Devam Et"
+
+#: scenes/ui/game_ui.tscn
+msgid "GAME_RULES"
+msgstr "Oyun Kuralları"
+
+#: scenes/ui/game_ui.tscn
+msgid "EXIT_TO_MENU"
+msgstr "Menüye Dön"
+
+#: scenes/ui/game_ui.tscn
+msgid "SETTINGS_TITLE"
+msgstr "Ayarlar"
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_1"
+msgstr ""
+"Bu oyun klasik solitaire oyununun kurallarını baz alır.\n"
+"\n"
+"Kartları üst üste koymak için iki koşul var: farklı renk olmaları "
+"ve numaralarının ardışık azalması."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_2"
+msgstr ""
+"Numaralı kartlar bu yuvaların üzerine sürüklenerek toplanabilir.\n"
+"Hepsini toplarsan kazanırsın!"
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_3"
+msgstr ""
+"Toplama alanları, bir kart buraya konulabileceğinde parlar.\n"
+"Bir kartı otomatik toplamak için boşluk tuşuna basabilir veya kartı sürükleyebilirsin."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_4"
+msgstr ""
+"İki özel kart var: [color=#ffe050]Rahip[/color] ve [color=a40000]Vampir[/color].\n"
+"\n"
+"İki kart da aktif olduklarında hamlelerine özel bir efekt uygularlar."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_5"
+msgstr ""
+"[color=a40000]Vampir[/color] masum köylüleri (siyah kartlar) ısırıp onları "
+"vampirlere (kırmızı kartlar) çevirir.\n"
+"\n"
+"Sıradaki hedefi rastgele seçilir ve hedefini o kartın etrafında kırmızı "
+"duman çıkararak gösterir."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_6"
+msgstr ""
+"[color=#ffe050]Rahip[/color] vampirleri (kırmızı kartlar) iyileştirir ve "
+"onları köylülere (siyah kartlar) dönüştürür.\n"
+"\n"
+"Sıradaki hedefi rastgele seçilir ve hedefini o kartın etrafında parıltı "
+"çıkararak gösterir."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_7"
+msgstr ""
+"İki özel kart sadece kendi alanlarında aktiftir.\n"
+"\n"
+"[color=#ffe050]Rahip[/color]'in alanı gümüş tepsi, [color=a40000]Vampir[/color]'in alanı ise tabuttur."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_8"
+msgstr ""
+"3 tarafsız bölge vardır.\n"
+"Her renkten sadece bir kart aynı anda burada olabilir.\n"
+"\n"
+"Bir kartı bölgeler arasında hareket ettirmek hamle sayılmaz."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_9"
+msgstr ""
+"Özel kartları tarafsız bölgelerde sakla veya başka kartların altında tutarak devre dışı bırak.\n"
+"\n"
+"Özel kartları devre dışı bırakmak hamle sayılmaz."
+
+#: scenes/ui/game_ui.tscn
+msgid "TUTORIAL_PAGE_10"
+msgstr ""
+"Oyunu çivilerle yönet.\n"
+"\n"
+"[color=a40000]Sıfırla[/color] çivisi yeni bir oyun başlatır.\n"
+"[color=#ffe050]Duraklat[/color] çivisiyle oyun menüsünü açabilirsin.\n"
+"Eğiticiye geri dönmek istersen, [color=#ffe050]Bilgi[/color] düğmesine tıkla.\n"
+"\n"
+"Umarız oyunu beğenirsin!"
+
+#: scenes/ui/tutorial_box.tscn
+msgid "1/2"
+msgstr ""
+
+#: scenes/ui/tutorial_box.tscn
+msgid "BACK"
+msgstr "Geri"
+
+#: scenes/ui/tutorial_box.tscn
+msgid "NEXT"
+msgstr "Sıradaki"
+
+#: scenes/ui/tutorial_box.tscn
+msgid "FINISH"
+msgstr "Bitir"
+
+#: scenes/ui/mode_drop_down.tscn
+msgid "CASUAL"
+msgstr "Rahat"
+
+#: scenes/ui/rows_drop_down.tscn
+msgid "FOUR"
+msgstr "Dört"
+
+#: scenes/ui/rows_drop_down.tscn
+msgid "FIVE"
+msgstr "Beş"
+
+#: scenes/ui/rows_drop_down.tscn
+msgid "SIX"
+msgstr "Altı"
+
+#: scenes/ui/difficulty_drop_down.tscn
+msgid "WISHFUL"
+msgstr "Ümitli"
+
+#: scenes/ui/difficulty_drop_down.tscn
+msgid "WARY"
+msgstr "Tedbirli"
+
+#: scenes/ui/difficulty_drop_down.tscn
+msgid "HOPELESS"
+msgstr "Umutsuz"
+
+#: scenes/ui/separated_labels.tscn
+msgid "ART_AND_PROGRAMMING"
+msgstr "Sanat ve Programlama"
+
+#: scenes/ui/separated_labels.tscn
+msgid "PROGRAMMING"
+msgstr "Programlama"
+
+#: scenes/ui/separated_labels.tscn
+msgid "BACKGROUND_MUSIC"
+msgstr "Arkaplan müziği"
+
+#: scenes/ui/separated_labels.tscn
+msgid "SOUND_EFFECTS"
+msgstr "Ses Efektleri"

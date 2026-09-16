@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxyo05k8puq8h"]
+
+[ext_resource type="PackedScene" uid="uid://w8qgmqcgj501" path="res://scenes/game/zone.tscn" id="1_rccw8"]
+[ext_resource type="Script" uid="uid://qs5rcyoj3xgt" path="res://scripts/game/special_zone.gd" id="2_k4876"]
+
+[node name="SpecialZone" instance=ExtResource("1_rccw8")]
+script = ExtResource("2_k4876")

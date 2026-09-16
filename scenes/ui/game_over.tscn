@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgs552gav8epd"]
+
+[ext_resource type="Theme" uid="uid://yk5ww36oyeyk" path="res://resources/theme/vampire_theme.tres" id="1_60xr3"]
+[ext_resource type="Script" uid="uid://sv3nndxdaaut" path="res://scripts/ui/bbcode_win.gd" id="2_fu4wh"]
+[ext_resource type="Script" uid="uid://dhm771faoneda" path="res://scripts/ui/game_over.gd" id="2_vfrx6"]
+[ext_resource type="Texture2D" uid="uid://bq7h8j1pj23ds" path="res://assets/particles/spark_particle2.png" id="3_x6o8e"]
+[ext_resource type="Script" uid="uid://b3b3drjprwmpu" path="res://scripts/ui/bbcode_loss.gd" id="4_o6b8n"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_x6o8e"]
+script = ExtResource("2_fu4wh")
+metadata/_custom_type_script = "uid://sv3nndxdaaut"
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_4583b"]
+script = ExtResource("4_o6b8n")
+metadata/_custom_type_script = "uid://b3b3drjprwmpu"
+
+[sub_resource type="Curve" id="Curve_vfrx6"]
+_data = [Vector2(0, 0.285714), 0.0, -1.29227, 0, 0, Vector2(0.501425, 1), 1.90336, 1.90336, 0, 0, Vector2(0.994302, 0.414349), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_o6b8n"]
+interpolation_mode = 2
+colors = PackedColorArray(0.97, 0.964342, 0.6305, 1, 0.92, 0.644, 0.23, 1)
+
+[node name="GameOver" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("1_60xr3")
+alignment = 1
+script = ExtResource("2_vfrx6")
+
+[node name="RichTextLabelGameOver" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.76, 0.0836, 0.0836, 1)
+theme_override_colors/font_outline_color = Color(0.272123, 0.0139158, 0.106883, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[loss amp=12 freq=4 off=.9]YOU_WON[/loss]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 2
+custom_effects = [SubResource("RichTextEffect_x6o8e"), SubResource("RichTextEffect_4583b")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Particles" type="CPUParticles2D" parent="Control"]
+show_behind_parent = true
+texture_filter = 2
+scale = Vector2(0.36, 0.47)
+amount = 100
+texture = ExtResource("3_x6o8e")
+lifetime = 0.5
+speed_scale = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(1200, 400)
+gravity = Vector2(0, 90)
+angular_velocity_min = 30.0
+angular_velocity_max = 60.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_vfrx6")
+color = Color(0.878431, 0.854902, 0.396078, 1)
+color_ramp = SubResource("Gradient_o6b8n")
+hue_variation_min = -0.14
+hue_variation_max = 0.98
+
+[node name="ButtonPlayAgain" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PLAY_AGAIN"
+
+[node name="ButtonBackToMenu" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BACK_TO_MENU"
+
+[connection signal="button_down" from="ButtonPlayAgain" to="." method="_on_button_play_again_button_down"]
+[connection signal="button_down" from="ButtonBackToMenu" to="." method="_on_button_back_to_menu_button_down"]

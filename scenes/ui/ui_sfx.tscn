@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://2tj507qk1iie"]
+
+[ext_resource type="Script" uid="uid://cdkb3abyrwe70" path="res://scripts/ui/ui_sfx.gd" id="1_0bdn1"]
+
+[node name="UISfx" type="Node"]
+script = ExtResource("1_0bdn1")

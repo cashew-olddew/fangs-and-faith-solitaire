@@ -1,0 +1,186 @@
+# LANGUAGE translation for vampire-solitaire for the following files:
+# res://scenes/main.tscn
+# res://scenes/tutorial_box.tscn
+# res://scenes/main_menu.tscn
+# res://ui_components/language.tscn
+# res://ui_components/cursor.tscn
+# res://ui_components/display.tscn
+# res://ui_components/settings.tscn
+# res://ui_components/volume.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: vampire-solitaire\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_1"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_2"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_3"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_4"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_5"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_6"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_7"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_8"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TUTORIAL_PAGE_9"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "RESET"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "TRY_AGAIN"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "PAUSE_TITLE"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "RESUME"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "GAME_RULES"
+msgstr ""
+
+#: scenes/main.tscn
+#: scenes/main_menu.tscn
+msgid "SETTINGS"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "EXIT_TO_MENU"
+msgstr ""
+
+#: scenes/main.tscn
+msgid "EXIT_TO_DESKTOP"
+msgstr ""
+
+#: scenes/main.tscn
+#: scenes/main_menu.tscn
+msgid "SETTINGS_TITLE"
+msgstr ""
+
+#: scenes/main.tscn
+#: scenes/main_menu.tscn
+msgid "BACK_TO_MENU"
+msgstr ""
+
+#: scenes/tutorial_box.tscn
+msgid "FINISH"
+msgstr ""
+
+#: scenes/tutorial_box.tscn
+msgid "BACK"
+msgstr ""
+
+#: scenes/tutorial_box.tscn
+msgid "NEXT"
+msgstr ""
+
+#: scenes/main_menu.tscn
+msgid "GAME_NAME"
+msgstr ""
+
+#: scenes/main_menu.tscn
+msgid "NEW_GAME"
+msgstr ""
+
+#: scenes/main_menu.tscn
+msgid "CREDITS"
+msgstr ""
+
+#: scenes/main_menu.tscn
+msgid "EXIT"
+msgstr ""
+
+#: scenes/main_menu.tscn
+msgid "ART _AND_PROGRAMMING"
+msgstr ""
+
+#: scenes/main_menu.tscn
+msgid "PROGRAMMING"
+msgstr ""
+
+#: scenes/main_menu.tscn
+msgid "OTHER_ASSETS"
+msgstr ""
+
+#: scenes/main_menu.tscn
+msgid "BACKGROUND_MUSIC"
+msgstr ""
+
+#: scenes/main_menu.tscn
+msgid "SOUND_EFFECTS"
+msgstr ""
+
+#: ui_components/language.tscn
+msgid "LANGUAGE"
+msgstr ""
+
+#: ui_components/cursor.tscn
+msgid "SYSTEM_CURSOR"
+msgstr ""
+
+#: ui_components/display.tscn
+msgid "FULL_SCREEN"
+msgstr ""
+
+#: ui_components/display.tscn
+msgid "SCREEN_RESOLUTION"
+msgstr ""
+
+#: ui_components/settings.tscn
+msgid "VIDEO"
+msgstr ""
+
+#: ui_components/settings.tscn
+msgid "AUDIO"
+msgstr ""
+
+#: ui_components/settings.tscn
+msgid "USER_INTERFACE"
+msgstr ""
+
+#: ui_components/settings.tscn
+msgid "BACK_TO_CATEGORIES"
+msgstr ""
+
+#: ui_components/volume.tscn
+msgid "SFX_VOLUME"
+msgstr ""
+
+#: ui_components/volume.tscn
+msgid "MUSIC_VOLUME"
+msgstr ""

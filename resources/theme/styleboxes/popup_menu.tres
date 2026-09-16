@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bhc1kvbaxw5t2"]
+
+[ext_resource type="Texture2D" uid="uid://b1qundvqr8ob6" path="res://assets/ui/dropdown/SubMenu.png" id="1_s2ojv"]
+
+[resource]
+texture = ExtResource("1_s2ojv")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 20.0
+texture_margin_bottom = 25.0

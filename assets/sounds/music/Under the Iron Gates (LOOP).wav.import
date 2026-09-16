@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://r4o7c8tmoffl"
+path="res://.godot/imported/Under the Iron Gates (LOOP).wav-e3642db2e5bf7b64b29db91352f40669.sample"
+
+[deps]
+
+source_file="res://assets/sounds/music/Under the Iron Gates (LOOP).wav"
+dest_files=["res://.godot/imported/Under the Iron Gates (LOOP).wav-e3642db2e5bf7b64b29db91352f40669.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

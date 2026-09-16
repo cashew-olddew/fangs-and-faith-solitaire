@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c2p6c28d80tl6"
+path="res://.godot/imported/Summon_Card_v1_variation_02_wav.wav-2ba04677c5ae1c90c3453e890a828ca0.sample"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/cards/priest heal/Summon_Card_v1_variation_02_wav.wav"
+dest_files=["res://.godot/imported/Summon_Card_v1_variation_02_wav.wav-2ba04677c5ae1c90c3453e890a828ca0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

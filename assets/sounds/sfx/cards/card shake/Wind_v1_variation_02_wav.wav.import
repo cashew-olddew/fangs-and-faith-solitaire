@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cd545klkhsx63"
+path="res://.godot/imported/Wind_v1_variation_02_wav.wav-ccb826ee85c4627be4aae9cf147dcbd9.sample"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/cards/card shake/Wind_v1_variation_02_wav.wav"
+dest_files=["res://.godot/imported/Wind_v1_variation_02_wav.wav-ccb826ee85c4627be4aae9cf147dcbd9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

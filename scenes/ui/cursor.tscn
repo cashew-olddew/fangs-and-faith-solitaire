@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfh5d1x5167vl"]
+
+[ext_resource type="Script" uid="uid://cmiee62whucwt" path="res://scripts/ui/cursor.gd" id="1_as6th"]
+[ext_resource type="Theme" uid="uid://yk5ww36oyeyk" path="res://resources/theme/vampire_theme.tres" id="1_he6hr"]
+
+[node name="Cursor" type="HBoxContainer"]
+theme = ExtResource("1_he6hr")
+script = ExtResource("1_as6th")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "SYSTEM_CURSOR"
+
+[node name="CheckBoxCursor" type="CheckBox" parent="."]
+layout_mode = 2
+
+[connection signal="toggled" from="CheckBoxCursor" to="." method="_on_check_box_cursor_toggled"]

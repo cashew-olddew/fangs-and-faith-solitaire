@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c2fvmhik7hrj2"
+path="res://.godot/imported/Hover_Card_v1_variation_02_wav.wav-9d6bf817f4b7f227bbd57c871adf0191.sample"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/cards/card hover/Hover_Card_v1_variation_02_wav.wav"
+dest_files=["res://.godot/imported/Hover_Card_v1_variation_02_wav.wav-9d6bf817f4b7f227bbd57c871adf0191.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

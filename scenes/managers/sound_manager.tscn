@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cakmv20vtl1ao"]
+
+[ext_resource type="Script" uid="uid://bltjpjhs4f7re" path="res://globals/sound_manager.gd" id="1_m4ys1"]
+[ext_resource type="PackedScene" uid="uid://3jn08sjkcn4v" path="res://scenes/managers/sound_queue.tscn" id="2_x1g6q"]
+
+[node name="SoundManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_m4ys1")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SoundQueue" parent="." instance=ExtResource("2_x1g6q")]
+queue_size = 24

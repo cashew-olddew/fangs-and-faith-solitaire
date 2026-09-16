@@ -1,0 +1,76 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="Fangs and Faith Solitaire"
+run/main_scene="res://scenes/ui/main_menu.tscn"
+config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/bg_color=Color(0.051971, 0.051971, 0.0519709, 1)
+boot_splash/image="uid://xrvag0w68uhi"
+config/icon="uid://bry0khubob1kx"
+boot_splash/minimum_display_time=200
+
+[autoload]
+
+SoundManager="*res://scenes/managers/sound_manager.tscn"
+SaveManager="*res://globals/save_manager.gd"
+UI="*res://globals/ui.gd"
+Utils="*res://globals/utils.gd"
+SteamManager="*res://globals/steam_manager.gd"
+StatsManager="*res://globals/stats_manager.gd"
+
+[debug]
+
+file_logging/enable_file_logging=true
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1152
+window/size/window_height_override=648
+window/stretch/mode="viewport"
+
+[input]
+
+pause_game={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
+]
+}
+click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(308, 7),"global_position":Vector2(317, 53),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+testshake={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/cs.po", "res://localization/de.po", "res://localization/en.po", "res://localization/es.po", "res://localization/fr.po", "res://localization/hu.po", "res://localization/it.po", "res://localization/ro.po", "res://localization/tr.po", "res://localization/nl.po")
+locale/translations_pot_files=PackedStringArray("res://scenes/ui/cursor.tscn", "res://scenes/ui/display.tscn", "res://scenes/ui/language_drop_down.tscn", "res://scenes/ui/settings.tscn", "res://scenes/ui/volume.tscn", "res://scenes/ui/main_menu.tscn", "res://scenes/ui/game_over.tscn", "res://scenes/ui/game_ui.tscn", "res://scenes/ui/rows_drop_down.tscn", "res://scenes/ui/tutorial_box.tscn", "res://scenes/ui/separated_labels.tscn")
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+
+[steam]
+
+initialization/app_id=3032430
