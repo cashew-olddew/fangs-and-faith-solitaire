@@ -26,9 +26,9 @@ func enter(_data := {}) -> void:
 	o.listen_to_normal_card_events()
 	o.listen_to_special_card_events()
 	
-	o.transformation_manager.initialize(o.normal_cards, o.special_cards)
-	
 	o.distribute_cards(shuffled_cards)
+	# Initialized after distribution so the first targets are chosen based on the dealt board
+	o.transformation_manager.initialize(o.normal_cards, o.special_cards)
 	await o.position_cards_on_zones()
 
 	#state_machine.change_state("GameOver")

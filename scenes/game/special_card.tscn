@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7qikxkrn87tc"]
+[gd_scene format=3 uid="uid://b7qikxkrn87tc"]
 
 [ext_resource type="PackedScene" uid="uid://dvdjx4ii3o1d" path="res://scenes/game/card.tscn" id="1_epy2u"]
 [ext_resource type="Script" uid="uid://cbm7xdsn5gl8p" path="res://scripts/game/special_card.gd" id="2_l0tnn"]
@@ -8,10 +8,10 @@
 [ext_resource type="Script" uid="uid://eowbns7puidk" path="res://scripts/game/card_states/state_unleashed.gd" id="6_0a51g"]
 [ext_resource type="Script" uid="uid://c4775kqtoi0d6" path="res://scripts/animation/animation.gd" id="6_tenyu"]
 
-[node name="SpecialCard" instance=ExtResource("1_epy2u")]
+[node name="SpecialCard" unique_id=1808615465 instance=ExtResource("1_epy2u")]
 script = ExtResource("2_l0tnn")
 
-[node name="Animation" type="Node2D" parent="." index="0"]
+[node name="Animation" type="Node2D" parent="." index="0" unique_id=1672554696]
 script = ExtResource("6_tenyu")
 
 [node name="Idle" parent="StateMachine" index="0"]
@@ -20,8 +20,8 @@ script = ExtResource("3_km4kv")
 [node name="Returning" parent="StateMachine" index="2"]
 script = ExtResource("5_mt8m2")
 
-[node name="Unleashed" type="Node" parent="StateMachine" index="3"]
+[node name="Unleashed" type="Node" parent="StateMachine" index="3" unique_id=970316435]
 script = ExtResource("6_0a51g")
 
-[node name="Active" type="Node" parent="StateMachine" index="4"]
+[node name="Active" type="Node" parent="StateMachine" index="4" unique_id=533777743]
 script = ExtResource("4_4atpv")
