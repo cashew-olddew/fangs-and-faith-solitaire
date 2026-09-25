@@ -82,10 +82,16 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "PLAY_AGAIN"
 
+[node name="ButtonReplaySeed" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "REPLAY_SEED"
+
 [node name="ButtonBackToMenu" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "BACK_TO_MENU"
 
 [connection signal="button_down" from="ButtonPlayAgain" to="." method="_on_button_play_again_button_down"]
+[connection signal="button_down" from="ButtonReplaySeed" to="." method="_on_button_replay_seed_button_down"]
 [connection signal="button_down" from="ButtonBackToMenu" to="." method="_on_button_back_to_menu_button_down"]

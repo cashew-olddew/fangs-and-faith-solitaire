@@ -128,6 +128,10 @@ msgstr "Keine weiteren Züge"
 msgid "PLAY_AGAIN"
 msgstr "Nochmal spielen"
 
+#: scenes/ui/game_over.tscn
+msgid "REPLAY_SEED"
+msgstr "Dieses Spiel wiederholen"
+
 #: scenes/ui/game_ui.tscn
 msgid "PAUSE_TITLE"
 msgstr "Spiel Pausiert"

@@ -128,6 +128,10 @@ msgstr "Nessuna mossa disponibile"
 msgid "PLAY_AGAIN"
 msgstr "Gioca Ancora"
 
+#: scenes/ui/game_over.tscn
+msgid "REPLAY_SEED"
+msgstr "Rigioca Questa Mano"
+
 #: scenes/ui/game_ui.tscn
 msgid "PAUSE_TITLE"
 msgstr "Gioco in pausa"

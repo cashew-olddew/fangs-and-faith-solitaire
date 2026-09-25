@@ -11,7 +11,8 @@ func enter(_data := {}) -> void:
 	o.animation_manager.make_cards_fall(all_cards)
 	o.game_state_changed.emit(name)
 
-	update_steam_statistics()
+	if not BoardManager.is_replay:
+		update_steam_statistics()
 
 func update_steam_statistics():
 	SteamManager.set_statistic("nr_consecutive_wins", 0)

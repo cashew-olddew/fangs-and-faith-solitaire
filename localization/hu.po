@@ -128,6 +128,10 @@ msgstr "Nincs Több Lépés"
 msgid "PLAY_AGAIN"
 msgstr "Játssz Újra"
 
+#: scenes/ui/game_over.tscn
+msgid "REPLAY_SEED"
+msgstr "Leosztás Újrajátszása"
+
 #: scenes/ui/game_ui.tscn
 msgid "PAUSE_TITLE"
 msgstr "Játék Szüneteltetve"

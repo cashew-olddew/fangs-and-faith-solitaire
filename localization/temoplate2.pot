@@ -132,6 +132,10 @@ msgstr ""
 msgid "PLAY_AGAIN"
 msgstr ""
 
+#: scenes/ui/game_over.tscn
+msgid "REPLAY_SEED"
+msgstr ""
+
 #: scenes/ui/game_ui.tscn
 msgid "PAUSE_TITLE"
 msgstr ""

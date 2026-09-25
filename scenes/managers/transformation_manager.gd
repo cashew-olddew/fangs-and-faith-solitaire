@@ -36,17 +36,18 @@ func set_marked_card(special_card: SpecialCard) -> void:
 
 # Priority: unordered & safe > safe in the smallest ordered run > leads to game over
 func pick_fair_target(candidates: Array) -> NormalCard:
+	var rng: RandomNumberGenerator = (owner as BoardManager).rng
 	var run_sizes := get_ordered_run_sizes()
 	var safe_cards := candidates.filter(func(card): return not would_cause_game_over(card))
 	if safe_cards.is_empty():
-		return candidates.pick_random()
+		return Utils.pick_random(candidates, rng)
 
 	var unordered_cards := safe_cards.filter(func(card): return not run_sizes.has(card))
 	if not unordered_cards.is_empty():
-		return unordered_cards.pick_random()
+		return Utils.pick_random(unordered_cards, rng)
 
 	var smallest_run: int = safe_cards.map(func(card): return run_sizes[card]).min()
-	return safe_cards.filter(func(card): return run_sizes[card] == smallest_run).pick_random()
+	return Utils.pick_random(safe_cards.filter(func(card): return run_sizes[card] == smallest_run), rng)
 
 func get_all_zones() -> Array:
 	var board: BoardManager = owner

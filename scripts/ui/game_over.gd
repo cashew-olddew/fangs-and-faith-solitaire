@@ -4,6 +4,7 @@ extends VBoxContainer
 @onready var particles: CPUParticles2D = $Control/Particles
 
 signal play_again_button_pressed
+signal replay_seed_button_pressed
 signal back_button_pressed
 
 const FADE_DURATION = 1
@@ -24,3 +25,6 @@ func _on_button_back_to_menu_button_down() -> void:
 
 func _on_button_play_again_button_down() -> void:
 	play_again_button_pressed.emit()
+
+func _on_button_replay_seed_button_down() -> void:
+	replay_seed_button_pressed.emit()

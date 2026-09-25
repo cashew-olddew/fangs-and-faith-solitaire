@@ -128,6 +128,10 @@ msgstr "Nu mai sunt mutări"
 msgid "PLAY_AGAIN"
 msgstr "Joacă din nou"
 
+#: scenes/ui/game_over.tscn
+msgid "REPLAY_SEED"
+msgstr "Rejoacă aceeași mână"
+
 #: scenes/ui/game_ui.tscn
 msgid "PAUSE_TITLE"
 msgstr "Joc Întrerupt"

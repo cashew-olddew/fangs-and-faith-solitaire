@@ -128,6 +128,10 @@ msgstr "Hamle kalmadı"
 msgid "PLAY_AGAIN"
 msgstr "Tekrar Oyna"
 
+#: scenes/ui/game_over.tscn
+msgid "REPLAY_SEED"
+msgstr "Bu Eli Tekrar Oyna"
+
 #: scenes/ui/game_ui.tscn
 msgid "PAUSE_TITLE"
 msgstr "Oyun Durdu"

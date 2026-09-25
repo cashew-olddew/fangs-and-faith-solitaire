@@ -204,3 +204,4 @@ mouse_filter = 0
 [connection signal="button_back_pressed" from="CanvasLayer/BlurContainer/MarginSettings/VBoxSettings/VBoxSettings" to="." method="_on_back_button_pressed"]
 [connection signal="back_button_pressed" from="CanvasLayer/GameOver" to="." method="_on_game_over_back_button_pressed"]
 [connection signal="play_again_button_pressed" from="CanvasLayer/GameOver" to="." method="_on_game_over_play_again_button_pressed"]
+[connection signal="replay_seed_button_pressed" from="CanvasLayer/GameOver" to="." method="_on_game_over_replay_seed_button_pressed"]

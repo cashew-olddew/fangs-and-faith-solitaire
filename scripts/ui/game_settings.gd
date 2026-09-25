@@ -115,13 +115,18 @@ func _on_button_exit_pressed() -> void:
 	quit_game.emit()
 
 func _on_reset_button_pressed() -> void:
-	SteamManager.set_statistic("nr_consecutive_wins", 0)
+	if not BoardManager.is_replay:
+		SteamManager.set_statistic("nr_consecutive_wins", 0)
 	get_tree().reload_current_scene()
 
 func _on_game_over_back_button_pressed() -> void:
 	exit_to_menu()
 
 func _on_game_over_play_again_button_pressed() -> void:
+	get_tree().reload_current_scene()
+
+func _on_game_over_replay_seed_button_pressed() -> void:
+	BoardManager.replay_next_game = true
 	get_tree().reload_current_scene()
 
 func _on_pause_button_pressed() -> void:

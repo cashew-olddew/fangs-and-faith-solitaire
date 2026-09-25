@@ -17,9 +17,21 @@ var special_cards: Dictionary
 
 var game_settings: GameSettings = SaveManager.get_game_settings()
 
+# Static so they survive reload_current_scene
+static var current_seed: int = 0
+static var replay_next_game: bool = false
+# Replayed deals are known in advance, so they never touch wins, streaks or achievements
+static var is_replay: bool = false
+var rng := RandomNumberGenerator.new()
+
 signal game_state_changed(state: String)
 
 func _ready():
+	is_replay = replay_next_game
+	if not replay_next_game:
+		current_seed = randi()
+	replay_next_game = false
+	rng.seed = current_seed
 	state_machine.change_state("GameStart")
 
 func get_normal_cards(cards: Array) -> Array:
@@ -40,7 +52,7 @@ func shuffle_cards(normal_cards: Array, special_cards: Dictionary) -> Array:
 	var cards_reordered = normal_cards.duplicate(true)
 	
 	# Find a random card
-	var random_card: NormalCard = cards_reordered.pick_random()
+	var random_card: NormalCard = Utils.pick_random(cards_reordered, rng)
 	cards_reordered.erase(random_card)
 	
 	# Find a consecutive number of different suit
@@ -58,7 +70,7 @@ func shuffle_cards(normal_cards: Array, special_cards: Dictionary) -> Array:
 	
 	# Shuffle all cards and append the picked sequence at the and to ensure a first move
 	cards_reordered.append_array(special_cards.values())
-	cards_reordered.shuffle()
+	Utils.shuffle(cards_reordered, rng)
 	cards_reordered.append(random_card)
 	cards_reordered.append(card_for_sequence)
 	return cards_reordered

@@ -128,6 +128,10 @@ msgstr "Žádné další tahy"
 msgid "PLAY_AGAIN"
 msgstr "Hrát znovu"
 
+#: scenes/ui/game_over.tscn
+msgid "REPLAY_SEED"
+msgstr "Hrát stejné rozdání"
+
 #: scenes/ui/game_ui.tscn
 msgid "PAUSE_TITLE"
 msgstr "Hra pozastavena"

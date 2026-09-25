@@ -10,7 +10,8 @@ func enter(_data := {}) -> void:
 	o.animation_manager.spin_animation_manager.animate()
 	o.game_state_changed.emit(name)
 	
-	update_achievements()
+	if not BoardManager.is_replay:
+		update_achievements()
 		
 func update_achievements():
 	var wins = SteamManager.statistics.get("wins", 0) + 1

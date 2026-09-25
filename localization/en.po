@@ -128,6 +128,10 @@ msgstr "No More Moves"
 msgid "PLAY_AGAIN"
 msgstr "Play Again"
 
+#: scenes/ui/game_over.tscn
+msgid "REPLAY_SEED"
+msgstr "Replay This Deal"
+
 #: scenes/ui/game_ui.tscn
 msgid "PAUSE_TITLE"
 msgstr "Game Paused"
